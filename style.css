@@ -405,11 +405,11 @@ tr.apagada td:nth-child(2) {
 @media (max-width: 768px) {
   .card-copa {
     height: 78vh;
-    overflow: hidden;
+    overflow: auto;
   }
 
   .card-copa iframe {
-    width: 133%;
+    width: calc(100% / 0.75);
     height: calc(78vh / 0.75);
     transform: scale(0.75);
     transform-origin: top left;
