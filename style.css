@@ -59,7 +59,7 @@ th {
   background: #166534;
   color: white;
   padding: 12px;
-  text-align: left;
+  text-align: center;
   font-size: 13px;
   white-space: nowrap;
 }
@@ -70,6 +70,7 @@ td {
   font-size: 14px;
   white-space: nowrap;
   vertical-align: middle;
+  text-align: center;
 }
 
 tr:hover {
@@ -112,4 +113,10 @@ footer {
   color: #94a3b8;
   padding: 20px;
   font-size: 13px;
+}
+
+/* Segunda coluna (Participante) alinhada à esquerda */
+th:nth-child(2),
+td:nth-child(2) {
+    text-align: left;
 }
