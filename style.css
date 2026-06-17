@@ -122,21 +122,48 @@ td:nth-child(2) {
     text-align: left;
 }
 
-/* Primeira coluna */
-th:first-child,
-td:first-child {
-    position: sticky;
-    left: 0;
-    background: #020617;
-    z-index: 15;
+/* Congela a primeira linha */
+thead th {
+  position: sticky;
+  top: 0;
+  background: #166534;
+  z-index: 30;
 }
 
-/* Segunda coluna */
+/* Congela a primeira coluna */
+th:first-child,
+td:first-child {
+  position: sticky;
+  left: 0;
+  width: 40px;
+  min-width: 40px;
+  max-width: 40px;
+  background: #020617;
+  z-index: 20;
+}
+
+/* Congela a segunda coluna */
 th:nth-child(2),
 td:nth-child(2) {
-    position: sticky;
-    left: 45px;    /* ajustar depois */
-    background: #020617;
-    z-index: 15;
-    text-align: left;
+  position: sticky;
+  left: 40px;
+  background: #020617;
+  z-index: 20;
+  text-align: left;
+}
+
+/* Canto superior esquerdo: primeira célula do cabeçalho */
+thead th:first-child {
+  top: 0;
+  left: 0;
+  background: #166534;
+  z-index: 50;
+}
+
+/* Segunda célula do cabeçalho */
+thead th:nth-child(2) {
+  top: 0;
+  left: 40px;
+  background: #166534;
+  z-index: 50;
 }
