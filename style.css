@@ -344,3 +344,31 @@ tr.apagada td:nth-child(2) {
   color: #cbd5e1;
   line-height: 1.4;
 }
+
+.bandeira-equipe {
+
+    width: 30px;
+    height: 22px;
+    object-fit: cover;
+
+    margin-right: 10px;
+
+    border-radius: 3px;
+
+    vertical-align: middle;
+
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.2);
+
+}
+
+.bloco-equipe h2 {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:12px;
+
+}
