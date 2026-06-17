@@ -32,7 +32,9 @@ h1 {
   border-radius: 18px;
   padding: 20px;
   box-shadow: 0 14px 40px rgba(0,0,0,0.4);
-  overflow-x: auto;
+
+  max-height: 82vh;
+  overflow: auto;
 }
 
 input {
