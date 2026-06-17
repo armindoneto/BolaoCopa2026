@@ -30,7 +30,7 @@ h1 {
   background: rgba(2, 6, 23, 0.92);
   border: 1px solid #1e293b;
   border-radius: 18px;
-  padding: 20px;
+  padding: 0px;
   box-shadow: 0 14px 40px rgba(0,0,0,0.4);
 
   max-height: 82vh;
@@ -38,7 +38,8 @@ h1 {
 }
 
 input {
-  width: 100%;
+  margin: 20%;
+  width: calc(100% - 40px);
   max-width: 420px;
   padding: 13px 16px;
   margin-bottom: 18px;
@@ -50,6 +51,7 @@ input {
 }
 
 table {
+  margin: 0%;
   width: auto;
   border-collapse: collapse;
   min-width: auto;
@@ -170,30 +172,3 @@ thead th:nth-child(2) {
   z-index: 50;
 }
 
-/* Garante que as áreas congeladas cubram o conteúdo que passa por baixo */
-thead th {
-  background: #166534;
-  z-index: 40;
-  box-shadow: 0 2px 0 #1e293b;
-}
-
-th:first-child,
-td:first-child,
-th:nth-child(2),
-td:nth-child(2) {
-  background: #020617;
-  z-index: 30;
-  box-shadow: 2px 0 0 #1e293b;
-}
-
-/* Células congeladas do cabeçalho precisam ficar acima de tudo */
-thead th:first-child,
-thead th:nth-child(2) {
-  background: #166534;
-  z-index: 60;
-}
-
-/* Evita “vazamento” visual nas células comuns */
-td {
-  background-clip: padding-box;
-}
