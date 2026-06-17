@@ -137,8 +137,16 @@ function desenharTabela(linhas) {
 });
   thead.appendChild(trHead);
 
-  linhas.forEach(linha => {
-    const tr = document.createElement("tr");
+linhas.forEach(linha => {
+  const tr = document.createElement("tr");
+
+  const posicaoOriginal = dados.indexOf(linha);
+
+  if (posicaoOriginal === 0) tr.classList.add("top1");
+  if (posicaoOriginal === 1) tr.classList.add("top2");
+  if (posicaoOriginal === 2) tr.classList.add("top3");
+  if (posicaoOriginal === 3) tr.classList.add("top4");
+  if (posicaoOriginal === dados.length - 1) tr.classList.add("ultimo");
 
     colunas.forEach(coluna => {
       const td = document.createElement("td");
