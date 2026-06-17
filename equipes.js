@@ -77,18 +77,22 @@ function desenharListaEquipes(linhas) {
 
   const grupos = {};
 
-  linhas.forEach(linha => {
+linhas.forEach(linha => {
+
     const time = String(linha[colunaTime] || "").trim();
     const texto = String(linha[colunaTexto] || "").trim();
 
-    if (!time || !texto) return;
+    if (!time) return;
 
     if (!grupos[time]) {
-      grupos[time] = [];
+        grupos[time] = [];
     }
 
-    grupos[time].push(texto);
-  });
+    if (texto !== "") {
+        grupos[time].push(texto);
+    }
+
+});
 
   Object.entries(grupos).forEach(([time, textos]) => {
     const bloco = document.createElement("div");
@@ -111,11 +115,22 @@ titulo.appendChild(document.createTextNode(time));
 
     const lista = document.createElement("ul");
 
+if (textos.length === 0) {
+
+    const item = document.createElement("li");
+    item.textContent = "Nenhuma pontuação obtida";
+    item.className = "sem-pontos";
+    lista.appendChild(item);
+
+} else {
+
     textos.forEach(texto => {
-      const item = document.createElement("li");
-      item.textContent = texto;
-      lista.appendChild(item);
+        const item = document.createElement("li");
+        item.textContent = texto;
+        lista.appendChild(item);
     });
+
+}
 
     bloco.appendChild(titulo);
     bloco.appendChild(lista);
