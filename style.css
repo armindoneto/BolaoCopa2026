@@ -30,19 +30,17 @@ h1 {
   background: rgba(2, 6, 23, 0.92);
   border: 1px solid #1e293b;
   border-radius: 18px;
-  padding: 0px;
+  padding: 0;
   box-shadow: 0 14px 40px rgba(0,0,0,0.4);
   max-height: 82vh;
   overflow: auto;
-  padding-top: 20px;
 }
 
 input {
-  margin: 20%;
+  margin: 20px;
   width: calc(100% - 40px);
   max-width: 420px;
   padding: 13px 16px;
-  margin-bottom: 18px;
   border-radius: 12px;
   border: 1px solid #334155;
   background: #0f172a;
