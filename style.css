@@ -1,7 +1,17 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: radial-gradient(circle at top, #14532d, #020617 45%);
+  background:
+radial-gradient(circle at top left,
+#3CAC3B55 0%,
+transparent 30%),
+radial-gradient(circle at top,
+#2A398D66 0%,
+transparent 40%),
+radial-gradient(circle at top right,
+#E61D2555 0%,
+transparent 30%),
+#020617;
   color: #e5e7eb;
 }
 
