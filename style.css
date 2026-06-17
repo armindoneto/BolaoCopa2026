@@ -48,9 +48,9 @@ input {
 }
 
 table {
-  width: 100%;
+  width: auto;
   border-collapse: collapse;
-  min-width: 1000px;
+  min-width: auto;
 }
 
 th {
@@ -58,14 +58,14 @@ th {
   top: 0;
   background: #166534;
   color: white;
-  padding: 12px;
+  padding: 8px 10px;
   text-align: center;
   font-size: 13px;
   white-space: nowrap;
 }
 
 td {
-  padding: 10px 12px;
+  padding: 7px 10px;
   border-bottom: 1px solid #1e293b;
   font-size: 14px;
   white-space: nowrap;
@@ -92,12 +92,12 @@ tr:hover {
 .pais {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  margin: 2px 4px 2px 0;
-  padding: 4px 8px;
-  border-radius: 999px;
-  background: #0f172a;
-  border: 1px solid #334155;
+  justify-content: center;
+  margin: 1px 2px;
+  padding: 2px 4px;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
 }
 
 .pais img {
