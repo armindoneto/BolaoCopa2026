@@ -388,8 +388,9 @@ tr.apagada td:nth-child(2) {
 }
 
 .painel-copa {
-  width: 100%;
-  max-width: 100%;
+  width: calc(100vw - 40px);
+  max-width: 1800px;
+  margin: 0 auto;
 }
 
 .card-copa {
