@@ -44,7 +44,7 @@ input {
   border: 1px solid #334155;
   background: #0f172a;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 table {
@@ -56,18 +56,19 @@ table {
 th {
   position: sticky;
   top: 0;
+  z-index: 20;
   background: #166534;
   color: white;
   padding: 8px 10px;
   text-align: center;
-  font-size: 13px;
+  font-size: 11px;
   white-space: nowrap;
 }
 
 td {
   padding: 7px 10px;
   border-bottom: 1px solid #1e293b;
-  font-size: 14px;
+  font-size: 12px;
   white-space: nowrap;
   vertical-align: middle;
   text-align: center;
@@ -80,13 +81,13 @@ tr:hover {
 .posicao {
   font-weight: bold;
   color: #facc15;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .pontos {
   font-weight: bold;
   color: #38bdf8;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .pais {
@@ -112,7 +113,7 @@ footer {
   text-align: center;
   color: #94a3b8;
   padding: 20px;
-  font-size: 13px;
+  font-size: 11px;
 }
 
 /* Segunda coluna (Participante) alinhada à esquerda */
