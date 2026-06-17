@@ -62,6 +62,7 @@ Papa.parse(CSV_URL, {
   skipEmptyLines: true,
   complete: function(resultado) {
 dados = resultado.data;
+desenharDestaques();
 desenharTabela(dados);
 criarCachePesquisa();
   }
@@ -69,6 +70,59 @@ criarCachePesquisa();
 
 function normalizar(texto) {
   return String(texto || "").trim();
+}
+
+function desenharDestaques() {
+  const area = document.querySelector("#destaques");
+  if (!area || !dados.length) return;
+
+  area.innerHTML = "";
+
+  const destaques = [
+    { titulo: "🥇 1º Lugar", linha: dados[0], classe: "ouro" },
+    { titulo: "🥈 2º Lugar", linha: dados[1], classe: "prata" },
+    { titulo: "🥉 3º Lugar", linha: dados[2], classe: "bronze" },
+    { titulo: "🏅 4º Lugar", linha: dados[3], classe: "quarto" },
+    { titulo: "🔻 Lanterna", linha: dados[dados.length - 1], classe: "lanterna" }
+  ];
+
+  destaques.forEach(item => {
+    const card = document.createElement("div");
+    card.className = `card-destaque ${item.classe}`;
+
+    const nome = item.linha["PARTICIPANTE"] || item.linha["Participante"] || "";
+    const pontos = item.linha["P"] || item.linha["PONTOS"] || item.linha["Pontos"] || "";
+
+    const titulo = document.createElement("div");
+    titulo.className = "card-titulo";
+    titulo.textContent = item.titulo;
+
+    const participante = document.createElement("div");
+    participante.className = "card-nome";
+    participante.textContent = nome;
+
+    const pontuacao = document.createElement("div");
+    pontuacao.className = "card-pontos";
+    pontuacao.textContent = `${pontos} pts`;
+
+    const bandeirasCard = document.createElement("div");
+    bandeirasCard.className = "card-bandeiras";
+
+    Object.values(item.linha).forEach(valor => {
+      const pais = normalizar(valor);
+
+      if (bandeiras[pais]) {
+        bandeirasCard.appendChild(criarPais(pais));
+      }
+    });
+
+    card.appendChild(titulo);
+    card.appendChild(participante);
+    card.appendChild(pontuacao);
+    card.appendChild(bandeirasCard);
+
+    area.appendChild(card);
+  });
 }
 
 function criarCachePesquisa() {
