@@ -170,13 +170,26 @@ linhas.forEach(linha => {
 }
 
 document.querySelector("#busca").addEventListener("input", function(e) {
-  const termo = e.target.value.toLowerCase();
 
-  const filtrados = dados.filter(linha =>
-    Object.values(linha).some(valor =>
-      String(valor).toLowerCase().includes(termo)
-    )
-  );
+    const termo = e.target.value.toLowerCase();
 
-  desenharTabela(filtrados);
+    const linhas = document.querySelectorAll("#tabela tbody tr");
+
+    linhas.forEach(linha => {
+
+        linha.classList.remove("destacada");
+        linha.classList.remove("apagada");
+
+        if (termo == "") return;
+
+        const texto = linha.innerText.toLowerCase();
+
+        if (texto.includes(termo)) {
+            linha.classList.add("destacada");
+        } else {
+            linha.classList.add("apagada");
+        }
+
+    });
+
 });
