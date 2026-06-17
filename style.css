@@ -409,7 +409,7 @@ tr.apagada td:nth-child(2) {
   }
 
   .iframe-scale {
-    width: 133.333%;
+    width: 170%%;
     height: 133.333%;
     transform: scale(0.75);
     transform-origin: top left;
