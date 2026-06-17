@@ -45,7 +45,7 @@ const bandeiras = {
   "África do Sul": "za",
   "Arábia Saudita": "sa",
   "Jordânia": "jo",
-  "Bósnia e Herzegovina": "ba",
+  "Bósnia": "ba",
   "Cabo Verde": "cv",
   "Gana": "gh",
   "Curaçao": "cw",
