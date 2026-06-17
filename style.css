@@ -68,7 +68,7 @@ th {
 }
 
 td {
-  padding: 7px 10px;
+  padding: 5px 6px;
   border-bottom: 1px solid #1e293b;
   font-size: 12px;
   white-space: nowrap;
@@ -93,14 +93,12 @@ tr:hover {
 }
 
 .pais {
-  display: inline-flex;
+.pais {
+  display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1px 2px;
-  padding: 2px 4px;
-  border-radius: 6px;
-  background: transparent;
-  border: none;
+  margin: 0;
+  padding: 0;
 }
 
 .pais img {
