@@ -169,27 +169,30 @@ linhas.forEach(linha => {
   });
 }
 
-document.querySelector("#busca").addEventListener("input", function(e) {
+const busca = document.querySelector("#busca");
 
-    const termo = e.target.value.toLowerCase();
+let timerBusca;
 
-    const linhas = document.querySelectorAll("#tabela tbody tr");
+busca.addEventListener("input", function () {
+    clearTimeout(timerBusca);
 
-    linhas.forEach(linha => {
+    timerBusca = setTimeout(() => {
+        const termo = busca.value.toLowerCase();
+        const linhas = document.querySelectorAll("#tabela tbody tr");
 
-        linha.classList.remove("destacada");
-        linha.classList.remove("apagada");
+        linhas.forEach(linha => {
+            linha.classList.remove("destacada");
+            linha.classList.remove("apagada");
 
-        if (termo == "") return;
+            if (termo === "") return;
 
-        const texto = linha.innerText.toLowerCase();
+            const texto = linha.innerText.toLowerCase();
 
-        if (texto.includes(termo)) {
-            linha.classList.add("destacada");
-        } else {
-            linha.classList.add("apagada");
-        }
-
-    });
-
+            if (texto.includes(termo)) {
+                linha.classList.add("destacada");
+            } else {
+                linha.classList.add("apagada");
+            }
+        });
+    }, 150);
 });
