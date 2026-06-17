@@ -25,6 +25,13 @@ h1 {
   font-size: 36px;
 }
 
+.logo-titulo {
+    height: 60px;
+    width: auto;
+    vertical-align: middle;
+    margin-right: 12px;
+}
+
 .subtitulo {
   margin-top: 8px;
   color: #cbd5e1;
