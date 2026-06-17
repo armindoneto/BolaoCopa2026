@@ -76,7 +76,7 @@ th {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: #166534;
+  background:#2A398D;
   color: white;
   padding: 8px 10px;
   text-align: center;
@@ -232,7 +232,12 @@ tr.ultimo td:nth-child(2) {
 }
 
 .barra-painel {
-  background: #020617;
+ background:linear-gradient(
+90deg,
+#3CAC3B,
+#2A398D,
+#E61D25
+);
   padding: 14px 16px;
   border-bottom: 1px solid #1e293b;
 
