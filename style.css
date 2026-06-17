@@ -121,3 +121,22 @@ th:nth-child(2),
 td:nth-child(2) {
     text-align: left;
 }
+
+/* Primeira coluna */
+th:first-child,
+td:first-child {
+    position: sticky;
+    left: 0;
+    background: #020617;
+    z-index: 15;
+}
+
+/* Segunda coluna */
+th:nth-child(2),
+td:nth-child(2) {
+    position: sticky;
+    left: 45px;    /* ajustar depois */
+    background: #020617;
+    z-index: 15;
+    text-align: left;
+}
