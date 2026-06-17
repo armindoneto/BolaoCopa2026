@@ -169,3 +169,31 @@ thead th:nth-child(2) {
   background: #166534;
   z-index: 50;
 }
+
+/* Garante que as áreas congeladas cubram o conteúdo que passa por baixo */
+thead th {
+  background: #166534;
+  z-index: 40;
+  box-shadow: 0 2px 0 #1e293b;
+}
+
+th:first-child,
+td:first-child,
+th:nth-child(2),
+td:nth-child(2) {
+  background: #020617;
+  z-index: 30;
+  box-shadow: 2px 0 0 #1e293b;
+}
+
+/* Células congeladas do cabeçalho precisam ficar acima de tudo */
+thead th:first-child,
+thead th:nth-child(2) {
+  background: #166534;
+  z-index: 60;
+}
+
+/* Evita “vazamento” visual nas células comuns */
+td {
+  background-clip: padding-box;
+}
