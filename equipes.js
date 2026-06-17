@@ -1,5 +1,58 @@
 const CSV_EQUIPES_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQE2-mfvvTNWXF7dpzLmoTkTHryMo0TSxlpFX9kcXiYGyZFGzaXmIs23lJ8NyU8HEXseWYsndO9cD6w/pub?gid=824033652&single=true&output=csv";
 
+const bandeiras = {
+  "França": "fr",
+  "Espanha": "es",
+  "Argentina": "ar",
+  "Inglaterra": "gb-eng",
+  "Portugal": "pt",
+  "Brasil": "br",
+  "Holanda": "nl",
+  "Marrocos": "ma",
+  "Bélgica": "be",
+  "Alemanha": "de",
+  "Croácia": "hr",
+  "Colômbia": "co",
+  "Senegal": "sn",
+  "México": "mx",
+  "EUA": "us",
+  "Estados Unidos": "us",
+  "Uruguai": "uy",
+  "Japão": "jp",
+  "Suíça": "ch",
+  "Irã": "ir",
+  "Turquia": "tr",
+  "Equador": "ec",
+  "Áustria": "at",
+  "Coreia do Sul": "kr",
+  "Austrália": "au",
+  "Argélia": "dz",
+  "Egito": "eg",
+  "Canadá": "ca",
+  "Noruega": "no",
+  "Panamá": "pa",
+  "Costa do Marfim": "ci",
+  "Suécia": "se",
+  "Paraguai": "py",
+  "Rep. Tcheca": "cz",
+  "República Tcheca": "cz",
+  "Escócia": "gb-sct",
+  "Tunísia": "tn",
+  "Congo": "cd",
+  "Uzbequistão": "uz",
+  "Catar": "qa",
+  "Iraque": "iq",
+  "África do Sul": "za",
+  "Arábia Saudita": "sa",
+  "Jordânia": "jo",
+  "Bósnia": "ba",
+  "Cabo Verde": "cv",
+  "Gana": "gh",
+  "Curaçao": "cw",
+  "Haiti": "ht",
+  "Nova Zelândia": "nz"
+};
+
 let dadosEquipes = [];
 
 Papa.parse(CSV_EQUIPES_URL, {
@@ -42,6 +95,18 @@ function desenharListaEquipes(linhas) {
     bloco.className = "bloco-equipe";
 
     const titulo = document.createElement("h2");
+
+if (bandeiras[time]) {
+
+    const img = document.createElement("img");
+    img.src = bandeiras[time];
+    img.className = "bandeira-equipe";
+
+    titulo.appendChild(img);
+
+}
+
+titulo.appendChild(document.createTextNode(" " + time));
     titulo.textContent = time;
 
     const lista = document.createElement("ul");
