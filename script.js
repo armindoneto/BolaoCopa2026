@@ -86,7 +86,6 @@ function criarPais(nome) {
   texto.textContent = pais;
 
   span.appendChild(img);
-  span.appendChild(texto);
 
   return span;
 }
