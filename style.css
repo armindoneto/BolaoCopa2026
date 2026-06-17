@@ -15,25 +15,18 @@ transparent 30%),
   color: #e5e7eb;
 }
 
-header {
-  padding: 34px 20px;
+.hero {
+  padding: 28px 20px 18px;
   text-align: center;
 }
 
-h1 {
-  margin: 0;
-  font-size: 36px;
-}
-
-.logo-principal {
-    max-width: 500px;
-    width: 90%;
-    height: auto;
-}
-
-.subtitulo {
-  margin-top: 8px;
-  color: #cbd5e1;
+.banner-titulo {
+  display: block;
+  width: min(100%, 900px);
+  height: auto;
+  margin: 0 auto;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.35);
 }
 
 .container {
@@ -276,4 +269,15 @@ tr.destacada td:nth-child(2) {
 tr.apagada td:first-child,
 tr.apagada td:nth-child(2) {
   background: #020617 !important;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 18px 10px 10px;
+  }
+
+  .banner-titulo {
+    width: 100%;
+    border-radius: 12px;
+  }
 }
