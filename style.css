@@ -216,15 +216,30 @@ tr.ultimo td:nth-child(2) {
 .barra-painel {
   position: sticky;
   top: 0;
+  left: 0;
   z-index: 100;
-  background: #020617;
-  padding: 14px 16px;
-  border-bottom: 1px solid #1e293b;
+
+  min-width: max-content;
+  width: 100%;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+
+  padding: 14px 16px;
+
+  background: #020617;
+  border-bottom: 1px solid #1e293b;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.45);
+}
+
+.barra-painel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #020617;
+  z-index: -1;
 }
 
 .titulo-barra {
