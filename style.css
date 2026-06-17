@@ -245,8 +245,11 @@ tr.destacada td {
 }
 
 tr.apagada td {
-    opacity: 0.55;
-    transition: 0.2s;
+    color: #6b7280;
+}
+
+tr.apagada img {
+    filter: grayscale(100%) brightness(50%);
 }
 
 /* Busca: colunas congeladas com fundo sólido */
