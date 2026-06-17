@@ -94,20 +94,20 @@ function desenharListaEquipes(linhas) {
     const bloco = document.createElement("div");
     bloco.className = "bloco-equipe";
 
-    const titulo = document.createElement("h2");
+const titulo = document.createElement("h2");
 
-if (bandeiras[time]) {
+const codigo = bandeiras[time];
 
-    const img = document.createElement("img");
-    img.src = bandeiras[time];
-    img.className = "bandeira-equipe";
+if (codigo) {
+  const img = document.createElement("img");
+  img.src = `https://flagcdn.com/w40/${codigo}.png`;
+  img.alt = time;
+  img.className = "bandeira-equipe";
 
-    titulo.appendChild(img);
-
+  titulo.appendChild(img);
 }
 
-titulo.appendChild(document.createTextNode(" " + time));
-    titulo.textContent = time;
+titulo.appendChild(document.createTextNode(time));
 
     const lista = document.createElement("ul");
 
