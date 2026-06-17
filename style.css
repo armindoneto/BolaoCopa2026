@@ -408,9 +408,9 @@ tr.apagada td:nth-child(2) {
   }
 
   .card-copa iframe {
-    width: 125%;
+    width: 133%;
     height: 100vh;
-    transform: scale(0.8);
+    transform: scale(0.75);
     transform-origin: top left;
   }
 }
