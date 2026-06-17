@@ -127,10 +127,14 @@ function desenharTabela(linhas) {
 
   const trHead = document.createElement("tr");
   colunas.forEach(coluna => {
-    const th = document.createElement("th");
-    th.textContent = coluna;
-    trHead.appendChild(th);
-  });
+  const th = document.createElement("th");
+
+  // Remove sufixos criados automaticamente quando há cabeçalhos repetidos
+  // Exemplo: N1_1 vira N1, N2_2 vira N2
+  th.textContent = coluna.replace(/_\d+$/, "");
+
+  trHead.appendChild(th);
+});
   thead.appendChild(trHead);
 
   linhas.forEach(linha => {
