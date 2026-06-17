@@ -37,10 +37,9 @@ h1 {
 }
 
 input {
-  margin: 20px;
-  width: calc(100% - 40px);
+  width: 100%;
   max-width: 420px;
-  padding: 13px 16px;
+  padding: 11px 14px;
   border-radius: 12px;
   border: 1px solid #334155;
   background: #0f172a;
@@ -212,4 +211,25 @@ tr.top4 td:nth-child(2) {
 tr.ultimo td:first-child,
 tr.ultimo td:nth-child(2) {
   background: #3f1010;
+}
+
+.barra-painel {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #020617;
+  padding: 14px 16px;
+  border-bottom: 1px solid #1e293b;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.titulo-barra {
+  font-weight: bold;
+  font-size: 16px;
+  color: #e5e7eb;
+  white-space: nowrap;
 }
