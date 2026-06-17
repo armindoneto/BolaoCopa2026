@@ -1,30 +1,38 @@
-<header class="hero">
-    <img src="assets/banner.png" alt="Bolão ACC-RE" class="banner-titulo">
-</header>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copa do Mundo 2026</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-<nav class="menu-principal">
+<body>
+  <header class="hero">
+    <img src="assets/banner.png" alt="Bolão ACC-RE" class="banner-titulo">
+  </header>
+
+  <nav class="menu-principal">
     <a href="index.html" class="botao-menu">Tabela</a>
     <a href="equipes.html" class="botao-menu">Equipes</a>
     <a href="copa.html" class="botao-menu ativo">Copa</a>
-</nav>
+  </nav>
 
-<div class="container">
+  <div class="container">
+    <div class="painel-wrapper">
+      <div class="barra-painel">
+        <div class="titulo-barra">⚽ Copa do Mundo 2026</div>
+      </div>
 
-    <div class="card">
-
+      <div class="card-copa">
         <iframe
-            src="https://widget.api-futebol.com.br/render/widget_6f771a47cecdf28e"
-            title="API Futebol - Widget"
-            loading="lazy"
-            referrerpolicy="unsafe-url"
-            style="
-                width:100%;
-                height:800px;
-                border:none;
-                background:transparent;
-            ">
+          src="https://widget.api-futebol.com.br/render/widget_6f771a47cecdf28e"
+          title="API Futebol - Widget"
+          loading="lazy"
+          referrerpolicy="unsafe-url">
         </iframe>
-
+      </div>
     </div>
-
-</div>
+  </div>
+</body>
+</html>
