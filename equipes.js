@@ -8,40 +8,53 @@ Papa.parse(CSV_EQUIPES_URL, {
   skipEmptyLines: true,
   complete: function(resultado) {
     dadosEquipes = resultado.data;
-    desenharTabelaEquipes(dadosEquipes);
+    desenharListaEquipes(dadosEquipes);
   }
 });
 
-function desenharTabelaEquipes(linhas) {
-  const thead = document.querySelector("#tabela-equipes thead");
-  const tbody = document.querySelector("#tabela-equipes tbody");
-
-  thead.innerHTML = "";
-  tbody.innerHTML = "";
+function desenharListaEquipes(linhas) {
+  const area = document.querySelector("#lista-equipes");
+  area.innerHTML = "";
 
   if (!linhas.length) return;
 
   const colunas = Object.keys(linhas[0]);
+  const colunaTime = colunas[0];
+  const colunaTexto = colunas[1];
 
-  const trHead = document.createElement("tr");
-
-  colunas.forEach(coluna => {
-    const th = document.createElement("th");
-    th.textContent = coluna.replace(/_\d+$/, "");
-    trHead.appendChild(th);
-  });
-
-  thead.appendChild(trHead);
+  const grupos = {};
 
   linhas.forEach(linha => {
-    const tr = document.createElement("tr");
+    const time = String(linha[colunaTime] || "").trim();
+    const texto = String(linha[colunaTexto] || "").trim();
 
-    colunas.forEach(coluna => {
-      const td = document.createElement("td");
-      td.textContent = linha[coluna];
-      tr.appendChild(td);
+    if (!time || !texto) return;
+
+    if (!grupos[time]) {
+      grupos[time] = [];
+    }
+
+    grupos[time].push(texto);
+  });
+
+  Object.entries(grupos).forEach(([time, textos]) => {
+    const bloco = document.createElement("div");
+    bloco.className = "bloco-equipe";
+
+    const titulo = document.createElement("h2");
+    titulo.textContent = time;
+
+    const lista = document.createElement("ul");
+
+    textos.forEach(texto => {
+      const item = document.createElement("li");
+      item.textContent = texto;
+      lista.appendChild(item);
     });
 
-    tbody.appendChild(tr);
+    bloco.appendChild(titulo);
+    bloco.appendChild(lista);
+
+    area.appendChild(bloco);
   });
 }
