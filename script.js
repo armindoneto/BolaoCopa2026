@@ -54,19 +54,28 @@ const bandeiras = {
 };
 
 let dados = [];
+let cachePesquisa = [];
 
 Papa.parse(CSV_URL, {
   download: true,
   header: true,
   skipEmptyLines: true,
   complete: function(resultado) {
-    dados = resultado.data;
-    desenharTabela(dados);
+dados = resultado.data;
+desenharTabela(dados);
+criarCachePesquisa();
   }
 });
 
 function normalizar(texto) {
   return String(texto || "").trim();
+}
+
+function criarCachePesquisa() {
+  cachePesquisa = dados.map((linha, indice) => ({
+    indice,
+    texto: Object.values(linha).join(" ").toLowerCase()
+  }));
 }
 
 function criarPais(nome) {
@@ -174,25 +183,28 @@ const busca = document.querySelector("#busca");
 let timerBusca;
 
 busca.addEventListener("input", function () {
-    clearTimeout(timerBusca);
+  clearTimeout(timerBusca);
 
-    timerBusca = setTimeout(() => {
-        const termo = busca.value.toLowerCase();
-        const linhas = document.querySelectorAll("#tabela tbody tr");
+  timerBusca = setTimeout(() => {
+    const termo = busca.value.toLowerCase();
+    const linhas = document.querySelectorAll("#tabela tbody tr");
 
-        linhas.forEach(linha => {
-            linha.classList.remove("destacada");
-            linha.classList.remove("apagada");
+    linhas.forEach(linha => {
+      linha.classList.remove("destacada", "apagada");
+    });
 
-            if (termo === "") return;
+    if (termo === "") return;
 
-            const texto = linha.innerText.toLowerCase();
+    cachePesquisa.forEach(item => {
+      const linha = linhas[item.indice];
 
-            if (texto.includes(termo)) {
-                linha.classList.add("destacada");
-            } else {
-                linha.classList.add("apagada");
-            }
-        });
-    }, 150);
+      if (!linha) return;
+
+      if (item.texto.includes(termo)) {
+        linha.classList.add("destacada");
+      } else {
+        linha.classList.add("apagada");
+      }
+    });
+  }, 150);
 });
