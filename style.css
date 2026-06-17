@@ -232,12 +232,7 @@ tr.ultimo td:nth-child(2) {
 }
 
 .barra-painel {
- background:linear-gradient(
-90deg,
-#3CAC3B,
-#2A398D,
-#E61D25
-);
+ background:#020617;
   padding: 14px 16px;
   border-bottom: 1px solid #1e293b;
 
