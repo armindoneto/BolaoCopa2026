@@ -237,3 +237,14 @@ tr.ultimo td:nth-child(2) {
   color: #e5e7eb;
   white-space: nowrap;
 }
+
+/* Busca */
+tr.destacada td {
+    background: rgba(59, 130, 246, 0.30) !important;
+    transition: 0.2s;
+}
+
+tr.apagada td {
+    opacity: 0.25;
+    transition: 0.2s;
+}
