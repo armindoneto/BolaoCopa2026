@@ -281,3 +281,33 @@ tr.apagada td:nth-child(2) {
     border-radius: 12px;
   }
 }
+
+.menu-principal {
+  max-width: 1500px;
+  margin: 0 auto 16px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.botao-menu {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid #334155;
+  background: #020617;
+  transition: 0.2s;
+}
+
+.botao-menu:hover {
+  transform: translateY(-1px);
+  border-color: #ffffff;
+}
+
+.botao-menu.ativo {
+  background: linear-gradient(90deg, #3CAC3B, #2A398D, #E61D25);
+  border-color: transparent;
+}
