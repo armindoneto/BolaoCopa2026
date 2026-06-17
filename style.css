@@ -245,6 +245,6 @@ tr.destacada td {
 }
 
 tr.apagada td {
-    opacity: 0.25;
+    opacity: 0.55;
     transition: 0.2s;
 }
