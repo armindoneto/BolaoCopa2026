@@ -311,3 +311,36 @@ tr.apagada td:nth-child(2) {
   background: linear-gradient(90deg, #3CAC3B, #2A398D, #E61D25);
   border-color: transparent;
 }
+
+.card-equipes {
+  padding: 20px;
+  background: #020617;
+  max-height: 72vh;
+  overflow: auto;
+}
+
+.bloco-equipe {
+  border-bottom: 1px solid #1e293b;
+  padding: 16px 0;
+}
+
+.bloco-equipe:first-child {
+  padding-top: 0;
+}
+
+.bloco-equipe h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.bloco-equipe ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.bloco-equipe li {
+  margin: 6px 0;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
