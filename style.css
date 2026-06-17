@@ -293,23 +293,26 @@ tr.apagada td:nth-child(2) {
 
 .botao-menu {
   text-decoration: none;
-  color: #ffffff;
-  font-weight: bold;
-  padding: 10px 22px;
+  color: #e2e8f0;
+  font-weight: 600;
+  padding: 10px 24px;
   border-radius: 999px;
+
+  background: #0f172a;
   border: 1px solid #334155;
-  background: #020617;
-  transition: 0.2s;
+
+  transition: all .2s ease;
 }
 
 .botao-menu:hover {
-  transform: translateY(-1px);
-  border-color: #ffffff;
+  background: #1e293b;
+  border-color: #64748b;
 }
 
 .botao-menu.ativo {
-  background: linear-gradient(90deg, #3CAC3B, #2A398D, #E61D25);
-  border-color: transparent;
+  background: #1e293b;
+  border: 2px solid #2A398D;
+  color: white;
 }
 
 .card-equipes {
