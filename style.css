@@ -189,28 +189,27 @@ tr.ultimo td {
   background: rgba(239, 68, 68, 0.18);
 }
 
-/* Garante que as colunas congeladas também recebam a cor */
 tr.top1 td:first-child,
 tr.top1 td:nth-child(2) {
-  background: rgba(250, 204, 21, 0.35);
+  background: #5c4a06;
 }
 
 tr.top2 td:first-child,
 tr.top2 td:nth-child(2) {
-  background: rgba(203, 213, 225, 0.28);
+  background: #334155;
 }
 
 tr.top3 td:first-child,
 tr.top3 td:nth-child(2) {
-  background: rgba(180, 83, 9, 0.32);
+  background: #4a2507;
 }
 
 tr.top4 td:first-child,
 tr.top4 td:nth-child(2) {
-  background: rgba(34, 197, 94, 0.24);
+  background: #12351f;
 }
 
 tr.ultimo td:first-child,
 tr.ultimo td:nth-child(2) {
-  background: rgba(239, 68, 68, 0.28);
+  background: #3f1010;
 }
