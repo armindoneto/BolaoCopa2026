@@ -167,3 +167,50 @@ thead th:nth-child(2) {
   z-index: 50;
 }
 
+/* Destaque Top 4 */
+tr.top1 td {
+  background: rgba(250, 204, 21, 0.25);
+}
+
+tr.top2 td {
+  background: rgba(203, 213, 225, 0.18);
+}
+
+tr.top3 td {
+  background: rgba(180, 83, 9, 0.22);
+}
+
+tr.top4 td {
+  background: rgba(34, 197, 94, 0.14);
+}
+
+/* Destaque último colocado */
+tr.ultimo td {
+  background: rgba(239, 68, 68, 0.18);
+}
+
+/* Garante que as colunas congeladas também recebam a cor */
+tr.top1 td:first-child,
+tr.top1 td:nth-child(2) {
+  background: rgba(250, 204, 21, 0.35);
+}
+
+tr.top2 td:first-child,
+tr.top2 td:nth-child(2) {
+  background: rgba(203, 213, 225, 0.28);
+}
+
+tr.top3 td:first-child,
+tr.top3 td:nth-child(2) {
+  background: rgba(180, 83, 9, 0.32);
+}
+
+tr.top4 td:first-child,
+tr.top4 td:nth-child(2) {
+  background: rgba(34, 197, 94, 0.24);
+}
+
+tr.ultimo td:first-child,
+tr.ultimo td:nth-child(2) {
+  background: rgba(239, 68, 68, 0.28);
+}
