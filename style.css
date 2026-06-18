@@ -145,29 +145,6 @@ thead th {
   z-index: 30;
 }
 
-/* Congela a primeira coluna 
-th:first-child,
-td:first-child {
-  position: sticky;
-  left: 0;
-  width: 40px;
-  min-width: 40px;
-  max-width: 40px;
-  background: #020617;
-  z-index: 20;
-}
-
-Congela a segunda coluna 
-th:nth-child(2),
-td:nth-child(2) {
-  position: sticky;
-  left: 40px;
-  background: #020617;
-  z-index: 20;
-  text-align: left;
-}
-*/
-
 /* Canto superior esquerdo: primeira célula do cabeçalho */
 thead th:first-child {
   top: 0;
@@ -357,12 +334,6 @@ tr.apagada td:nth-child(2) {
     font-style: italic;
 }
 
-.card iframe{
-    display:block;
-    width:100%;
-    height:82vh;
-}
-
 .card-copa {
     width: 100%;
     max-height: 82vh;
@@ -385,7 +356,7 @@ tr.apagada td:nth-child(2) {
   }
 
   .iframe-scale {
-    width: 170%%;
+    width: 170%;
     height: 133.333%;
     transform: scale(0.75);
     transform-origin: top left;
@@ -407,13 +378,14 @@ tr.apagada td:nth-child(2) {
   border-bottom: none;
 }
 
-.celula-ponto-nivel {
-  padding: 1px 5px 5px;
-  text-align: center;
-  vertical-align: top;
-  font-size: 11px;
-  font-weight: 700;
-  color: #e5e7eb;
+.celula-ponto-nivel{
+    padding:1px 5px 5px;
+    text-align:center;
+    vertical-align:top;
+    font-size:11px;
+    font-weight:700;
+    color:#e5e7eb;
+    background:inherit;
 }
 
 .celula-bandeiras .pais {
@@ -471,37 +443,6 @@ tr.apagada td {
   color: #475569;
 }
 
-/* Top 4 nas colunas congeladas
-tr.top1 td:first-child,
-tr.top1 td:nth-child(2),
-tr.top1 td:nth-child(3) {
-  background: #5c4a06 !important;
-}
-
-tr.top2 td:first-child,
-tr.top2 td:nth-child(2),
-tr.top2 td:nth-child(3) {
-  background: #334155 !important;
-}
-
-tr.top3 td:first-child,
-tr.top3 td:nth-child(2),
-tr.top3 td:nth-child(3) {
-  background: #4a2507 !important;
-}
-
-tr.top4 td:first-child,
-tr.top4 td:nth-child(2),
-tr.top4 td:nth-child(3) {
-  background: #12351f !important;
-}
-
-tr.ultimo td:first-child,
-tr.ultimo td:nth-child(2),
-tr.ultimo td:nth-child(3) {
-  background: #3f1010 !important;
-}*/
-
 /* Top 4 nas colunas fixas: C, Participante e P */
 tr.top1 td[rowspan="2"] {
   background: #5c4a06 !important;
@@ -522,32 +463,6 @@ tr.top4 td[rowspan="2"] {
 tr.ultimo td[rowspan="2"] {
   background: #3f1010 !important;
 }
-
-.celula-ponto-nivel {
-  background: inherit;
-  text-align: center;
-}
-
-.fixa-c{
-    position:sticky;
-    left:0;
-    background:#020617;
-    z-index:30;
-}
-
-.fixa-participante{
-    position:sticky;
-    left:40px;
-    background:#020617;
-    z-index:30;
-}
-/*
-.fixa-pontos{
-    position:sticky;
-    left:200px;
-    background:#020617;
-    z-index:30;
-}*/
 
 /* Congelamento correto no layout de duas linhas */
 .fixa-c {
@@ -584,11 +499,6 @@ thead th:nth-child(2) {
   left: 40px;
   background: #166534;
   z-index: 80;
-}
-
-.celula-ponto-nivel {
-  text-align: center;
-  vertical-align: top;
 }
 
 /* Busca: apenas células fixas ficam sólidas */
