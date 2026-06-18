@@ -195,7 +195,6 @@ trPontos.dataset.indice = posicaoOriginal;
 
       if (coluna === colunasFixas[0]) td.classList.add("fixa-c");
 if (coluna === colunasFixas[1]) td.classList.add("fixa-participante");
-if (coluna === colunasFixas[2]) td.classList.add("fixa-pontos");
       
       td.rowSpan = 2;
 
