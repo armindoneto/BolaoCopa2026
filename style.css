@@ -466,13 +466,6 @@ tr.apagada + tr td {
   transition: 0.2s;
 }
 
-/* Layout novo: evita transparência nas colunas congeladas */
-td:first-child,
-td:nth-child(2),
-td:nth-child(3) {
-  background: #020617;
-}
-
 /* Top 4 e último colocado: cores nas duas linhas */
 tr.top1 td {
   background: #3f3305;
@@ -501,19 +494,6 @@ tr.destacada td {
 
 tr.apagada td {
   color: #475569;
-}
-
-/* Colunas congeladas sempre sólidas */
-tr.apagada td:first-child,
-tr.apagada td:nth-child(2),
-tr.apagada td:nth-child(3) {
-  background: #020617 !important;
-}
-
-tr.destacada td:first-child,
-tr.destacada td:nth-child(2),
-tr.destacada td:nth-child(3) {
-  background: #1e3a8a !important;
 }
 
 /* Top 4 nas colunas congeladas
@@ -634,4 +614,15 @@ thead th:nth-child(2) {
 .celula-ponto-nivel {
   text-align: center;
   vertical-align: top;
+}
+
+/* Busca: apenas células fixas ficam sólidas */
+tr.apagada td.fixa-c,
+tr.apagada td.fixa-participante {
+  background: #020617 !important;
+}
+
+tr.destacada td.fixa-c,
+tr.destacada td.fixa-participante {
+  background: #1e3a8a !important;
 }
