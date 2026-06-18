@@ -213,15 +213,15 @@ tr.apagada td {
     color: #475569;
 }
 
-/* Busca: colunas congeladas com fundo sólido */
-tr.destacada td:first-child,
-tr.destacada td:nth-child(2) {
-  background: #1e3a8a !important;
+/* Busca: apenas células fixas ficam sólidas */
+tr.apagada td.fixa-c,
+tr.apagada td.fixa-participante {
+  background: #020617 !important;
 }
 
-tr.apagada td:first-child,
-tr.apagada td:nth-child(2) {
-  background: #020617 !important;
+tr.destacada td.fixa-c,
+tr.destacada td.fixa-participante {
+  background: #1e3a8a !important;
 }
 
 @media (max-width: 768px) {
@@ -334,12 +334,6 @@ tr.apagada td:nth-child(2) {
     font-style: italic;
 }
 
-.card iframe{
-    display:block;
-    width:100%;
-    height:82vh;
-}
-
 .card-copa {
     width: 100%;
     max-height: 82vh;
@@ -362,7 +356,7 @@ tr.apagada td:nth-child(2) {
   }
 
   .iframe-scale {
-    width: 170%%;
+    width: 170%;
     height: 133.333%;
     transform: scale(0.75);
     transform-origin: top left;
@@ -384,13 +378,14 @@ tr.apagada td:nth-child(2) {
   border-bottom: none;
 }
 
-.celula-ponto-nivel {
-  padding: 1px 5px 5px;
-  text-align: center;
-  vertical-align: top;
-  font-size: 11px;
-  font-weight: 700;
-  color: #e5e7eb;
+.celula-ponto-nivel{
+    padding:1px 5px 5px;
+    text-align:center;
+    vertical-align:top;
+    font-size:11px;
+    font-weight:700;
+    color:#e5e7eb;
+    background:inherit;
 }
 
 .celula-bandeiras .pais {
@@ -469,25 +464,6 @@ tr.ultimo td[rowspan="2"] {
   background: #3f1010 !important;
 }
 
-.celula-ponto-nivel {
-  background: inherit;
-  text-align: center;
-}
-
-.fixa-c{
-    position:sticky;
-    left:0;
-    background:#020617;
-    z-index:30;
-}
-
-.fixa-participante{
-    position:sticky;
-    left:40px;
-    background:#020617;
-    z-index:30;
-}
-
 /* Congelamento correto no layout de duas linhas */
 .fixa-c {
   position: sticky;
@@ -523,11 +499,6 @@ thead th:nth-child(2) {
   left: 40px;
   background: #166534;
   z-index: 80;
-}
-
-.celula-ponto-nivel {
-  text-align: center;
-  vertical-align: top;
 }
 
 /* Busca: apenas células fixas ficam sólidas */
