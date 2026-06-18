@@ -422,3 +422,45 @@ tr.apagada td:nth-child(2) {
     display: block;
   }
 }
+
+/* Layout em duas linhas por participante */
+.celula-bandeiras {
+  padding: 3px 5px 1px;
+  text-align: center;
+  vertical-align: bottom;
+  border-bottom: none;
+}
+
+.celula-ponto-nivel {
+  padding: 1px 5px 5px;
+  text-align: center;
+  vertical-align: top;
+  font-size: 11px;
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+.celula-bandeiras .pais {
+  display: inline-flex;
+  margin: 0 1px;
+}
+
+.celula-bandeiras .pais img {
+  width: 21px;
+  height: 15px;
+}
+
+/* Remove a linha divisória entre bandeira e ponto */
+tbody tr:nth-child(odd) td {
+  border-bottom: none;
+}
+
+/* Cria separação apenas depois da linha de pontos */
+tbody tr:nth-child(even) td {
+  border-bottom: 1px solid #1e293b;
+}
+
+tr.destacada + tr td,
+tr.apagada + tr td {
+  transition: 0.2s;
+}
