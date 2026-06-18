@@ -206,31 +206,6 @@ tr.ultimo td {
   background: rgba(239, 68, 68, 0.18);
 }
 
-tr.top1 td:first-child,
-tr.top1 td:nth-child(2) {
-  background: #5c4a06;
-}
-
-tr.top2 td:first-child,
-tr.top2 td:nth-child(2) {
-  background: #334155;
-}
-
-tr.top3 td:first-child,
-tr.top3 td:nth-child(2) {
-  background: #4a2507;
-}
-
-tr.top4 td:first-child,
-tr.top4 td:nth-child(2) {
-  background: #12351f;
-}
-
-tr.ultimo td:first-child,
-tr.ultimo td:nth-child(2) {
-  background: #3f1010;
-}
-
 .barra-painel {
  background:#020617;
   padding: 14px 16px;
