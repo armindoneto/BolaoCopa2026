@@ -617,41 +617,41 @@ td[rowspan="2"]{
     border-bottom: 1px solid #1e293b !important;
 }
 
-/* Apenas desktop */
 @media (min-width: 769px) {
 
+  /* aumenta um pouco a tabela inteira */
   td {
-    font-size: 14px;
-    padding: 7px 8px;
+    font-size: 15px;
+    padding: 8px 9px;
   }
 
   th {
-    font-size: 13px;
+    font-size: 14px;
+    padding: 10px 12px;
   }
 
-  .pais img {
-    width: 24px;
-    height: 18px;
+  /* nomes dos participantes */
+  .fixa-participante {
+    font-size: 15px;
   }
 
-  .celula-bandeiras .pais img {
-    width: 24px;
-    height: 18px;
-  }
-
-  .celula-ponto-nivel {
-    font-size: 13px;
-  }
-
+  /* posição e pontuação total */
   .posicao {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .pontos {
-    font-size: 17px;
+    font-size: 19px;
   }
 
-  .fixa-participante {
+  /* bandeiras */
+  .celula-bandeiras .pais img {
+    width: 28px;
+    height: 21px;
+  }
+
+  /* pontuação de cada nível */
+  .celula-ponto-nivel {
     font-size: 14px;
   }
 
