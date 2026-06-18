@@ -601,3 +601,18 @@ tr.destacada td.fixa-c,
 tr.destacada td.fixa-participante {
   background: #1e3a8a !important;
 }
+
+.celula-bandeiras,
+.celula-ponto-nivel {
+  text-align: center !important;
+}
+
+.celula-bandeiras .pais {
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td[rowspan="2"] {
+  border-bottom: 1px solid #1e293b;
+}
