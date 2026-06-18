@@ -161,6 +161,9 @@ function desenharTabela(linhas) {
 
     const posicaoOriginal = dados.indexOf(linha);
 
+    trBandeiras.dataset.indice = posicaoOriginal;
+trPontos.dataset.indice = posicaoOriginal;
+
     if (posicaoOriginal === 0) {
       trBandeiras.classList.add("top1");
       trPontos.classList.add("top1");
@@ -261,6 +264,7 @@ busca.addEventListener("input", function () {
 
   timerBusca = setTimeout(() => {
     const termo = busca.value.toLowerCase();
+
     const linhas = document.querySelectorAll("#tabela tbody tr");
 
     linhas.forEach(linha => {
@@ -270,15 +274,17 @@ busca.addEventListener("input", function () {
     if (termo === "") return;
 
     cachePesquisa.forEach(item => {
-      const linha = linhas[item.indice];
+      const linhasDoParticipante = document.querySelectorAll(
+        `#tabela tbody tr[data-indice="${item.indice}"]`
+      );
 
-      if (!linha) return;
-
-      if (item.texto.includes(termo)) {
-        linha.classList.add("destacada");
-      } else {
-        linha.classList.add("apagada");
-      }
+      linhasDoParticipante.forEach(linha => {
+        if (item.texto.includes(termo)) {
+          linha.classList.add("destacada");
+        } else {
+          linha.classList.add("apagada");
+        }
+      });
     });
   }, 150);
 });
