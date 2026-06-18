@@ -560,10 +560,53 @@ tr.ultimo td:nth-child(3) {
     background:#020617;
     z-index:30;
 }
-
+/*
 .fixa-pontos{
     position:sticky;
     left:200px;
     background:#020617;
     z-index:30;
+}*/
+
+/* Congelamento correto no layout de duas linhas */
+.fixa-c {
+  position: sticky;
+  left: 0;
+  width: 40px;
+  min-width: 40px;
+  max-width: 40px;
+  background: #020617;
+  z-index: 40;
+}
+
+.fixa-participante {
+  position: sticky;
+  left: 40px;
+  width: 200px;
+  min-width: 200px;
+  max-width: 200px;
+  background: #020617;
+  z-index: 40;
+  text-align: left;
+}
+
+/* Cabeçalho congelado das duas primeiras colunas */
+thead th:first-child {
+  position: sticky;
+  left: 0;
+  width: 40px;
+  min-width: 40px;
+  max-width: 40px;
+  background: #166534;
+  z-index: 80;
+}
+
+thead th:nth-child(2) {
+  position: sticky;
+  left: 40px;
+  width: 200px;
+  min-width: 200px;
+  max-width: 200px;
+  background: #166534;
+  z-index: 80;
 }
