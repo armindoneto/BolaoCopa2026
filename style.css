@@ -620,9 +620,39 @@ td[rowspan="2"]{
 /* Apenas desktop */
 @media (min-width: 769px) {
 
-  .painel-wrapper{
-    width: 95%;
-    max-width: 1800px;
+  td {
+    font-size: 14px;
+    padding: 7px 8px;
+  }
+
+  th {
+    font-size: 13px;
+  }
+
+  .pais img {
+    width: 24px;
+    height: 18px;
+  }
+
+  .celula-bandeiras .pais img {
+    width: 24px;
+    height: 18px;
+  }
+
+  .celula-ponto-nivel {
+    font-size: 13px;
+  }
+
+  .posicao {
+    font-size: 18px;
+  }
+
+  .pontos {
+    font-size: 17px;
+  }
+
+  .fixa-participante {
+    font-size: 14px;
   }
 
 }
