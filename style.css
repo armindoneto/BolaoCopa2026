@@ -516,7 +516,7 @@ tr.destacada td:nth-child(3) {
   background: #1e3a8a !important;
 }
 
-/* Top 4 nas colunas congeladas */
+/* Top 4 nas colunas congeladas
 tr.top1 td:first-child,
 tr.top1 td:nth-child(2),
 tr.top1 td:nth-child(3) {
@@ -544,6 +544,31 @@ tr.top4 td:nth-child(3) {
 tr.ultimo td:first-child,
 tr.ultimo td:nth-child(2),
 tr.ultimo td:nth-child(3) {
+  background: #3f1010 !important;
+}*/
+
+tr.top1 td.fixa-c,
+tr.top1 td.fixa-participante {
+  background: #5c4a06 !important;
+}
+
+tr.top2 td.fixa-c,
+tr.top2 td.fixa-participante {
+  background: #334155 !important;
+}
+
+tr.top3 td.fixa-c,
+tr.top3 td.fixa-participante {
+  background: #4a2507 !important;
+}
+
+tr.top4 td.fixa-c,
+tr.top4 td.fixa-participante {
+  background: #12351f !important;
+}
+
+tr.ultimo td.fixa-c,
+tr.ultimo td.fixa-participante {
   background: #3f1010 !important;
 }
 
@@ -603,4 +628,9 @@ thead th:nth-child(2) {
   left: 40px;
   background: #166534;
   z-index: 80;
+}
+
+.celula-ponto-nivel {
+  text-align: center;
+  vertical-align: top;
 }
