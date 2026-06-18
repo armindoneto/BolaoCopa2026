@@ -616,3 +616,13 @@ tr.destacada td.fixa-participante {
 td[rowspan="2"]{
     border-bottom: 1px solid #1e293b !important;
 }
+
+/* Apenas desktop */
+@media (min-width: 769px) {
+
+  .painel-wrapper{
+    width: 95%;
+    max-width: 1800px;
+  }
+
+}
