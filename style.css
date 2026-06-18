@@ -145,29 +145,6 @@ thead th {
   z-index: 30;
 }
 
-/* Congela a primeira coluna 
-th:first-child,
-td:first-child {
-  position: sticky;
-  left: 0;
-  width: 40px;
-  min-width: 40px;
-  max-width: 40px;
-  background: #020617;
-  z-index: 20;
-}
-
-Congela a segunda coluna 
-th:nth-child(2),
-td:nth-child(2) {
-  position: sticky;
-  left: 40px;
-  background: #020617;
-  z-index: 20;
-  text-align: left;
-}
-*/
-
 /* Canto superior esquerdo: primeira célula do cabeçalho */
 thead th:first-child {
   top: 0;
@@ -471,37 +448,6 @@ tr.apagada td {
   color: #475569;
 }
 
-/* Top 4 nas colunas congeladas
-tr.top1 td:first-child,
-tr.top1 td:nth-child(2),
-tr.top1 td:nth-child(3) {
-  background: #5c4a06 !important;
-}
-
-tr.top2 td:first-child,
-tr.top2 td:nth-child(2),
-tr.top2 td:nth-child(3) {
-  background: #334155 !important;
-}
-
-tr.top3 td:first-child,
-tr.top3 td:nth-child(2),
-tr.top3 td:nth-child(3) {
-  background: #4a2507 !important;
-}
-
-tr.top4 td:first-child,
-tr.top4 td:nth-child(2),
-tr.top4 td:nth-child(3) {
-  background: #12351f !important;
-}
-
-tr.ultimo td:first-child,
-tr.ultimo td:nth-child(2),
-tr.ultimo td:nth-child(3) {
-  background: #3f1010 !important;
-}*/
-
 /* Top 4 nas colunas fixas: C, Participante e P */
 tr.top1 td[rowspan="2"] {
   background: #5c4a06 !important;
@@ -541,13 +487,6 @@ tr.ultimo td[rowspan="2"] {
     background:#020617;
     z-index:30;
 }
-/*
-.fixa-pontos{
-    position:sticky;
-    left:200px;
-    background:#020617;
-    z-index:30;
-}*/
 
 /* Congelamento correto no layout de duas linhas */
 .fixa-c {
