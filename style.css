@@ -145,7 +145,7 @@ thead th {
   z-index: 30;
 }
 
-/* Congela a primeira coluna */
+/* Congela a primeira coluna 
 th:first-child,
 td:first-child {
   position: sticky;
@@ -157,7 +157,7 @@ td:first-child {
   z-index: 20;
 }
 
-/* Congela a segunda coluna */
+Congela a segunda coluna 
 th:nth-child(2),
 td:nth-child(2) {
   position: sticky;
@@ -166,6 +166,7 @@ td:nth-child(2) {
   z-index: 20;
   text-align: left;
 }
+*/
 
 /* Canto superior esquerdo: primeira célula do cabeçalho */
 thead th:first-child {
@@ -203,31 +204,6 @@ tr.top4 td {
 /* Destaque último colocado */
 tr.ultimo td {
   background: rgba(239, 68, 68, 0.18);
-}
-
-tr.top1 td:first-child,
-tr.top1 td:nth-child(2) {
-  background: #5c4a06;
-}
-
-tr.top2 td:first-child,
-tr.top2 td:nth-child(2) {
-  background: #334155;
-}
-
-tr.top3 td:first-child,
-tr.top3 td:nth-child(2) {
-  background: #4a2507;
-}
-
-tr.top4 td:first-child,
-tr.top4 td:nth-child(2) {
-  background: #12351f;
-}
-
-tr.ultimo td:first-child,
-tr.ultimo td:nth-child(2) {
-  background: #3f1010;
 }
 
 .barra-painel {
@@ -421,4 +397,262 @@ tr.apagada td:nth-child(2) {
     border: none;
     display: block;
   }
+}
+
+/* Layout em duas linhas por participante */
+.celula-bandeiras {
+  padding: 3px 5px 1px;
+  text-align: center;
+  vertical-align: bottom;
+  border-bottom: none;
+}
+
+.celula-ponto-nivel {
+  padding: 1px 5px 5px;
+  text-align: center;
+  vertical-align: top;
+  font-size: 11px;
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+.celula-bandeiras .pais {
+  display: inline-flex;
+  margin: 0 1px;
+}
+
+.celula-bandeiras .pais img {
+  width: 21px;
+  height: 15px;
+}
+
+/* Remove a linha divisória entre bandeira e ponto */
+tbody tr:nth-child(odd) td {
+  border-bottom: none;
+}
+
+/* Cria separação apenas depois da linha de pontos */
+tbody tr:nth-child(even) td {
+  border-bottom: 1px solid #1e293b;
+}
+
+tr.destacada + tr td,
+tr.apagada + tr td {
+  transition: 0.2s;
+}
+
+/* Top 4 e último colocado: cores nas duas linhas */
+tr.top1 td {
+  background: #3f3305;
+}
+
+tr.top2 td {
+  background: #1e293b;
+}
+
+tr.top3 td {
+  background: #3b1604;
+}
+
+tr.top4 td {
+  background: #0f2f1d;
+}
+
+tr.ultimo td {
+  background: #3f1010;
+}
+
+/* Busca no layout de duas linhas */
+tr.destacada td {
+  background: #1e3a8a !important;
+}
+
+tr.apagada td {
+  color: #475569;
+}
+
+/* Top 4 nas colunas congeladas
+tr.top1 td:first-child,
+tr.top1 td:nth-child(2),
+tr.top1 td:nth-child(3) {
+  background: #5c4a06 !important;
+}
+
+tr.top2 td:first-child,
+tr.top2 td:nth-child(2),
+tr.top2 td:nth-child(3) {
+  background: #334155 !important;
+}
+
+tr.top3 td:first-child,
+tr.top3 td:nth-child(2),
+tr.top3 td:nth-child(3) {
+  background: #4a2507 !important;
+}
+
+tr.top4 td:first-child,
+tr.top4 td:nth-child(2),
+tr.top4 td:nth-child(3) {
+  background: #12351f !important;
+}
+
+tr.ultimo td:first-child,
+tr.ultimo td:nth-child(2),
+tr.ultimo td:nth-child(3) {
+  background: #3f1010 !important;
+}*/
+
+/* Top 4 nas colunas fixas: C, Participante e P */
+tr.top1 td[rowspan="2"] {
+  background: #5c4a06 !important;
+}
+
+tr.top2 td[rowspan="2"] {
+  background: #334155 !important;
+}
+
+tr.top3 td[rowspan="2"] {
+  background: #4a2507 !important;
+}
+
+tr.top4 td[rowspan="2"] {
+  background: #12351f !important;
+}
+
+tr.ultimo td[rowspan="2"] {
+  background: #3f1010 !important;
+}
+
+.celula-ponto-nivel {
+  background: inherit;
+  text-align: center;
+}
+
+.fixa-c{
+    position:sticky;
+    left:0;
+    background:#020617;
+    z-index:30;
+}
+
+.fixa-participante{
+    position:sticky;
+    left:40px;
+    background:#020617;
+    z-index:30;
+}
+/*
+.fixa-pontos{
+    position:sticky;
+    left:200px;
+    background:#020617;
+    z-index:30;
+}*/
+
+/* Congelamento correto no layout de duas linhas */
+.fixa-c {
+  position: sticky;
+  left: 0;
+  width: 40px;
+  min-width: 40px;
+  max-width: 40px;
+  background: #020617;
+  z-index: 40;
+}
+
+.fixa-participante {
+  position: sticky;
+  left: 40px;
+  background: #020617;
+  z-index: 40;
+  text-align: left;
+}
+
+/* Cabeçalho congelado das duas primeiras colunas */
+thead th:first-child {
+  position: sticky;
+  left: 0;
+  width: 40px;
+  min-width: 40px;
+  max-width: 40px;
+  background: #166534;
+  z-index: 80;
+}
+
+thead th:nth-child(2) {
+  position: sticky;
+  left: 40px;
+  background: #166534;
+  z-index: 80;
+}
+
+.celula-ponto-nivel {
+  text-align: center;
+  vertical-align: top;
+}
+
+/* Busca: apenas células fixas ficam sólidas */
+tr.apagada td.fixa-c,
+tr.apagada td.fixa-participante {
+  background: #020617 !important;
+}
+
+tr.destacada td.fixa-c,
+tr.destacada td.fixa-participante {
+  background: #1e3a8a !important;
+}
+
+.celula-bandeiras,
+.celula-ponto-nivel {
+  text-align: center !important;
+}
+
+.celula-bandeiras .pais {
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td[rowspan="2"]{
+    border-bottom: 1px solid #1e293b !important;
+}
+
+@media (min-width: 769px) {
+
+  /* aumenta um pouco a tabela inteira */
+  td {
+    font-size: 15px;
+    padding: 8px 9px;
+  }
+
+  th {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  /* nomes dos participantes */
+  .fixa-participante {
+    font-size: 15px;
+  }
+
+  /* posição e pontuação total */
+  .posicao {
+    font-size: 20px;
+  }
+
+  .pontos {
+    font-size: 19px;
+  }
+
+  /* bandeiras */
+  .celula-bandeiras .pais img {
+    width: 28px;
+    height: 21px;
+  }
+
+  /* pontuação de cada nível */
+  .celula-ponto-nivel {
+    font-size: 14px;
+  }
+
 }

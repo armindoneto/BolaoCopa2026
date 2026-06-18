@@ -134,31 +134,70 @@ function desenharTabela(linhas) {
 
   const colunas = Object.keys(linhas[0]);
 
+  const colunasFixas = colunas.slice(0, 3);      // C, PARTICIPANTE, P
+  const colunasPontos = colunas.slice(3, 14);    // N1 a N11
+  const colunasBandeiras = colunas.slice(14);    // 16 seleções
+
+  // Cabeçalho
   const trHead = document.createElement("tr");
-  colunas.forEach(coluna => {
-  const th = document.createElement("th");
 
-  // Remove sufixos criados automaticamente quando há cabeçalhos repetidos
-  // Exemplo: N1_1 vira N1, N2_2 vira N2
-  th.textContent = coluna.replace(/_\d+$/, "");
+  colunasFixas.forEach(coluna => {
+    const th = document.createElement("th");
+    th.textContent = coluna.replace(/_\d+$/, "");
+    trHead.appendChild(th);
+  });
 
-  trHead.appendChild(th);
-});
+  colunasPontos.forEach(coluna => {
+    const th = document.createElement("th");
+    th.textContent = coluna.replace(/_\d+$/, "");
+    trHead.appendChild(th);
+  });
+
   thead.appendChild(trHead);
 
-linhas.forEach(linha => {
-  const tr = document.createElement("tr");
+  linhas.forEach((linha, indiceLinha) => {
+    const trBandeiras = document.createElement("tr");
+    const trPontos = document.createElement("tr");
 
-  const posicaoOriginal = dados.indexOf(linha);
+    const posicaoOriginal = dados.indexOf(linha);
 
-  if (posicaoOriginal === 0) tr.classList.add("top1");
-  if (posicaoOriginal === 1) tr.classList.add("top2");
-  if (posicaoOriginal === 2) tr.classList.add("top3");
-  if (posicaoOriginal === 3) tr.classList.add("top4");
-  if (posicaoOriginal === dados.length - 1) tr.classList.add("ultimo");
+    trBandeiras.dataset.indice = posicaoOriginal;
+trPontos.dataset.indice = posicaoOriginal;
 
-    colunas.forEach(coluna => {
+    if (posicaoOriginal === 0) {
+      trBandeiras.classList.add("top1");
+      trPontos.classList.add("top1");
+    }
+
+    if (posicaoOriginal === 1) {
+      trBandeiras.classList.add("top2");
+      trPontos.classList.add("top2");
+    }
+
+    if (posicaoOriginal === 2) {
+      trBandeiras.classList.add("top3");
+      trPontos.classList.add("top3");
+    }
+
+    if (posicaoOriginal === 3) {
+      trBandeiras.classList.add("top4");
+      trPontos.classList.add("top4");
+    }
+
+    if (posicaoOriginal === dados.length - 1) {
+      trBandeiras.classList.add("ultimo");
+      trPontos.classList.add("ultimo");
+    }
+
+    // Colunas fixas: C, PARTICIPANTE, P
+    colunasFixas.forEach(coluna => {
       const td = document.createElement("td");
+
+      if (coluna === colunasFixas[0]) td.classList.add("fixa-c");
+if (coluna === colunasFixas[1]) td.classList.add("fixa-participante");
+      
+      td.rowSpan = 2;
+
       preencherCelula(td, linha[coluna]);
 
       const nomeColuna = coluna.toLowerCase();
@@ -171,11 +210,53 @@ linhas.forEach(linha => {
         td.classList.add("pontos");
       }
 
-      tr.appendChild(td);
+      trBandeiras.appendChild(td);
     });
 
-    tbody.appendChild(tr);
+    // N1 a N11
+    colunasPontos.forEach((colunaPonto, indiceNivel) => {
+      const tdBandeiras = document.createElement("td");
+      tdBandeiras.classList.add("celula-bandeiras");
+
+      const tdPonto = document.createElement("td");
+      tdPonto.classList.add("celula-ponto-nivel");
+
+      const bandeirasDoNivel = obterBandeirasDoNivel(linha, colunasBandeiras, indiceNivel);
+
+      bandeirasDoNivel.forEach(nomePais => {
+        tdBandeiras.appendChild(criarPais(nomePais));
+      });
+
+      tdPonto.textContent = linha[colunaPonto];
+
+      trBandeiras.appendChild(tdBandeiras);
+      trPontos.appendChild(tdPonto);
+    });
+
+    tbody.appendChild(trBandeiras);
+    tbody.appendChild(trPontos);
   });
+}
+
+function obterBandeirasDoNivel(linha, colunasBandeiras, indiceNivel) {
+  // N1 a N6 têm 1 seleção
+  if (indiceNivel <= 5) {
+    const coluna = colunasBandeiras[indiceNivel];
+    return coluna ? [normalizar(linha[coluna])] : [];
+  }
+
+  // N7 a N11 têm 2 seleções
+  const indiceInicial = 6 + ((indiceNivel - 6) * 2);
+
+  const coluna1 = colunasBandeiras[indiceInicial];
+  const coluna2 = colunasBandeiras[indiceInicial + 1];
+
+  const selecoes = [];
+
+  if (coluna1) selecoes.push(normalizar(linha[coluna1]));
+  if (coluna2) selecoes.push(normalizar(linha[coluna2]));
+
+  return selecoes.filter(Boolean);
 }
 
 const busca = document.querySelector("#busca");
@@ -187,6 +268,7 @@ busca.addEventListener("input", function () {
 
   timerBusca = setTimeout(() => {
     const termo = busca.value.toLowerCase();
+
     const linhas = document.querySelectorAll("#tabela tbody tr");
 
     linhas.forEach(linha => {
@@ -196,15 +278,17 @@ busca.addEventListener("input", function () {
     if (termo === "") return;
 
     cachePesquisa.forEach(item => {
-      const linha = linhas[item.indice];
+      const linhasDoParticipante = document.querySelectorAll(
+        `#tabela tbody tr[data-indice="${item.indice}"]`
+      );
 
-      if (!linha) return;
-
-      if (item.texto.includes(termo)) {
-        linha.classList.add("destacada");
-      } else {
-        linha.classList.add("apagada");
-      }
+      linhasDoParticipante.forEach(linha => {
+        if (item.texto.includes(termo)) {
+          linha.classList.add("destacada");
+        } else {
+          linha.classList.add("apagada");
+        }
+      });
     });
   }, 150);
 });
