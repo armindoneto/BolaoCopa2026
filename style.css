@@ -582,9 +582,6 @@ tr.ultimo td:nth-child(3) {
 .fixa-participante {
   position: sticky;
   left: 40px;
-  width: 200px;
-  min-width: 200px;
-  max-width: 200px;
   background: #020617;
   z-index: 40;
   text-align: left;
@@ -604,9 +601,6 @@ thead th:first-child {
 thead th:nth-child(2) {
   position: sticky;
   left: 40px;
-  width: 200px;
-  min-width: 200px;
-  max-width: 200px;
   background: #166534;
   z-index: 80;
 }
