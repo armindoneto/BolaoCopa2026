@@ -213,15 +213,15 @@ tr.apagada td {
     color: #475569;
 }
 
-/* Busca: colunas congeladas com fundo sólido */
-tr.destacada td:first-child,
-tr.destacada td:nth-child(2) {
-  background: #1e3a8a !important;
+/* Busca: apenas células fixas ficam sólidas */
+tr.apagada td.fixa-c,
+tr.apagada td.fixa-participante {
+  background: #020617 !important;
 }
 
-tr.apagada td:first-child,
-tr.apagada td:nth-child(2) {
-  background: #020617 !important;
+tr.destacada td.fixa-c,
+tr.destacada td.fixa-participante {
+  background: #1e3a8a !important;
 }
 
 @media (max-width: 768px) {
