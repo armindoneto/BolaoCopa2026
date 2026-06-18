@@ -547,29 +547,30 @@ tr.ultimo td:nth-child(3) {
   background: #3f1010 !important;
 }*/
 
-tr.top1 td.fixa-c,
-tr.top1 td.fixa-participante {
+/* Top 4 nas colunas fixas: C, Participante e P */
+tr.top1 td[rowspan="2"] {
   background: #5c4a06 !important;
 }
 
-tr.top2 td.fixa-c,
-tr.top2 td.fixa-participante {
+tr.top2 td[rowspan="2"] {
   background: #334155 !important;
 }
 
-tr.top3 td.fixa-c,
-tr.top3 td.fixa-participante {
+tr.top3 td[rowspan="2"] {
   background: #4a2507 !important;
 }
 
-tr.top4 td.fixa-c,
-tr.top4 td.fixa-participante {
+tr.top4 td[rowspan="2"] {
   background: #12351f !important;
 }
 
-tr.ultimo td.fixa-c,
-tr.ultimo td.fixa-participante {
+tr.ultimo td[rowspan="2"] {
   background: #3f1010 !important;
+}
+
+.celula-ponto-nivel {
+  background: inherit;
+  text-align: center;
 }
 
 .fixa-c{
