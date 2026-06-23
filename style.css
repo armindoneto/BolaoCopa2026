@@ -565,4 +565,9 @@ td[rowspan="2"]{
     font-size: 14px;
   }
 
+  /* Bandeiras de seleções eliminadas - apenas tela Tabela */
+.eliminado img {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
 }
