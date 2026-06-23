@@ -53,6 +53,11 @@ const bandeiras = {
   "Nova Zelândia": "nz"
 };
 
+const eliminados = [
+  "Uruguai",
+  "Alemanha"
+];
+
 let dados = [];
 let cachePesquisa = [];
 
@@ -96,6 +101,10 @@ function criarPais(nome) {
 
   span.appendChild(img);
 
+  if (eliminados.includes(pais)) {
+  span.classList.add("eliminado");
+}
+  
   return span;
 }
 
