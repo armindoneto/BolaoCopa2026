@@ -54,8 +54,7 @@ const bandeiras = {
 };
 
 const eliminados = [
-  "Uruguai",
-  "Alemanha"
+  "Catar"
 ];
 
 let dados = [];
