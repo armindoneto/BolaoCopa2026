@@ -54,7 +54,9 @@ const bandeiras = {
 };
 
 const eliminados = [
-  "Catar"
+  "Catar",
+  "Haiti",
+  "Rep. Tcheca"
 ];
 
 let dados = [];
