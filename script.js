@@ -53,6 +53,58 @@ const bandeiras = {
   "Nova Zelândia": "nz"
 };
 
+const trigramas = {
+  "França": "FRA",
+  "Espanha": "ESP",
+  "Argentina": "ARG",
+  "Inglaterra": "ING",
+  "Portugal": "POR",
+  "Brasil": "BRA",
+  "Holanda": "HOL",
+  "Marrocos": "MAR",
+  "Bélgica": "BEL",
+  "Alemanha": "ALE",
+  "Croácia": "CRO",
+  "Colômbia": "COL",
+  "Senegal": "SEN",
+  "México": "MEX",
+  "EUA": "EUA",
+  "Estados Unidos": "EUA",
+  "Uruguai": "URU",
+  "Japão": "JAP",
+  "Suíça": "SUI",
+  "Irã": "IRA",
+  "Turquia": "TUR",
+  "Equador": "EQU",
+  "Áustria": "AUS",
+  "Coreia do Sul": "COR",
+  "Austrália": "AUS",
+  "Argélia": "ARG",
+  "Egito": "EGI",
+  "Canadá": "CAN",
+  "Noruega": "NOR",
+  "Panamá": "PAN",
+  "Costa do Marfim": "CMF",
+  "Suécia": "SUE",
+  "Paraguai": "PAR",
+  "Rep. Tcheca": "TCH",
+  "República Tcheca": "TCH",
+  "Escócia": "ESC",
+  "Tunísia": "TUN",
+  "Congo": "CON",
+  "Uzbequistão": "UZB",
+  "Catar": "CAT",
+  "Iraque": "IRQ",
+  "África do Sul": "AFS",
+  "Arábia Saudita": "ARA",
+  "Jordânia": "JOR",
+  "Bósnia": "BOS",
+  "Cabo Verde": "CBV",
+  "Gana": "GAN",
+  "Curaçao": "CUR",
+  "Haiti": "HAI",
+  "Nova Zelândia": "NZL"
+};
 const eliminados = [
   "Catar",
   "Haiti",
@@ -169,37 +221,44 @@ function desenharTabela(linhas) {
   thead.appendChild(trHead);
 
   linhas.forEach((linha, indiceLinha) => {
-    const trBandeiras = document.createElement("tr");
-    const trPontos = document.createElement("tr");
+const trBandeiras = document.createElement("tr");
+const trTrigramas = document.createElement("tr");
+const trPontos = document.createElement("tr");
 
     const posicaoOriginal = dados.indexOf(linha);
 
     trBandeiras.dataset.indice = posicaoOriginal;
 trPontos.dataset.indice = posicaoOriginal;
+    trTrigramas.dataset.indice = posicaoOriginal;
 
     if (posicaoOriginal === 0) {
-      trBandeiras.classList.add("top1");
-      trPontos.classList.add("top1");
+ trBandeiras.classList.add("top1");
+trTrigramas.classList.add("top1");
+trPontos.classList.add("top1");
     }
 
     if (posicaoOriginal === 1) {
-      trBandeiras.classList.add("top2");
-      trPontos.classList.add("top2");
+trBandeiras.classList.add("top2");
+trTrigramas.classList.add("top2");
+trPontos.classList.add("top2");
     }
 
     if (posicaoOriginal === 2) {
-      trBandeiras.classList.add("top3");
-      trPontos.classList.add("top3");
+trBandeiras.classList.add("top3");
+trTrigramas.classList.add("top3");
+trPontos.classList.add("top3");
     }
 
     if (posicaoOriginal === 3) {
-      trBandeiras.classList.add("top4");
-      trPontos.classList.add("top4");
+trBandeiras.classList.add("top4");
+trTrigramas.classList.add("top4");
+trPontos.classList.add("top4");
     }
 
     if (posicaoOriginal === dados.length - 1) {
-      trBandeiras.classList.add("ultimo");
-      trPontos.classList.add("ultimo");
+trBandeiras.classList.add("ultimo");
+trTrigramas.classList.add("ultimo");
+trPontos.classList.add("ultimo");
     }
 
     // Colunas fixas: C, PARTICIPANTE, P
@@ -209,7 +268,7 @@ trPontos.dataset.indice = posicaoOriginal;
       if (coluna === colunasFixas[0]) td.classList.add("fixa-c");
 if (coluna === colunasFixas[1]) td.classList.add("fixa-participante");
       
-      td.rowSpan = 2;
+      td.rowSpan = 3;
 
       preencherCelula(td, linha[coluna]);
 
@@ -228,26 +287,36 @@ if (coluna === colunasFixas[1]) td.classList.add("fixa-participante");
 
     // N1 a N11
     colunasPontos.forEach((colunaPonto, indiceNivel) => {
-      const tdBandeiras = document.createElement("td");
-      tdBandeiras.classList.add("celula-bandeiras");
+const tdBandeiras = document.createElement("td");
+tdBandeiras.classList.add("celula-bandeiras");
 
-      const tdPonto = document.createElement("td");
-      tdPonto.classList.add("celula-ponto-nivel");
+const tdTrigramas = document.createElement("td");
+tdTrigramas.classList.add("celula-trigramas");
 
-      const bandeirasDoNivel = obterBandeirasDoNivel(linha, colunasBandeiras, indiceNivel);
+const tdPonto = document.createElement("td");
+tdPonto.classList.add("celula-ponto-nivel");
 
-      bandeirasDoNivel.forEach(nomePais => {
-        tdBandeiras.appendChild(criarPais(nomePais));
-      });
+const bandeirasDoNivel = obterBandeirasDoNivel(linha, colunasBandeiras, indiceNivel);
 
-      tdPonto.textContent = linha[colunaPonto];
+bandeirasDoNivel.forEach(nomePais => {
+  tdBandeiras.appendChild(criarPais(nomePais));
 
-      trBandeiras.appendChild(tdBandeiras);
-      trPontos.appendChild(tdPonto);
-    });
+  const spanTri = document.createElement("span");
+  spanTri.className = "trigrama";
+  spanTri.textContent = trigramas[nomePais] || nomePais.slice(0, 3).toUpperCase();
 
-    tbody.appendChild(trBandeiras);
-    tbody.appendChild(trPontos);
+  tdTrigramas.appendChild(spanTri);
+});
+
+tdPonto.textContent = linha[colunaPonto];
+
+trBandeiras.appendChild(tdBandeiras);
+trTrigramas.appendChild(tdTrigramas);
+trPontos.appendChild(tdPonto);
+
+tbody.appendChild(trBandeiras);
+tbody.appendChild(trTrigramas);
+tbody.appendChild(trPontos);
   });
 }
 
