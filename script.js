@@ -318,7 +318,7 @@ tbody.appendChild(trBandeiras);
 tbody.appendChild(trTrigramas);
 tbody.appendChild(trPontos);
   });
-)}
+});
 
 function obterBandeirasDoNivel(linha, colunasBandeiras, indiceNivel) {
   // N1 a N6 têm 1 seleção
