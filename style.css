@@ -523,7 +523,7 @@ tr.destacada td.fixa-participante {
   margin-right: auto;
 }
 
-td[rowspan="2"]{
+td[rowspan="3"]{
     border-bottom: 1px solid #1e293b !important;
 }
 
@@ -569,4 +569,31 @@ td[rowspan="2"]{
 .eliminado img {
   filter: grayscale(100%);
 }
+  
+}
+.celula-trigramas {
+  padding: 0 5px 1px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #94a3b8;
+  background: inherit;
+  border-bottom: none;
+}
+
+.trigrama {
+  display: inline-block;
+  min-width: 20px;
+  text-align: center;
+  margin: 0 1px;
+}
+
+.celula-bandeiras {
+  padding-bottom: 0;
+}
+
+.celula-ponto-nivel {
+  padding-top: 0;
 }
