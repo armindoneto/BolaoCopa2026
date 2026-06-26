@@ -569,25 +569,27 @@ td[rowspan="2"]{
 .eliminado img {
   filter: grayscale(100%);
 }
-  
-}
-padding-top: 0;
-}
 
 .bloco-pais {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 1px;
+    display: inline-block;
+    text-align: center;
+    margin: 0 2px;
+    vertical-align: top;
 }
 
-.trigrama {
-  display: block;
-  margin-top: 1px;
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  color: #94a3b8;
-  line-height: 1;
+.bloco-pais .pais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.bloco-pais .trigrama {
+    display: block;
+    margin-top: 2px;
+    font-size: 7px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: .2px;
+    color: #94a3b8;
 }
