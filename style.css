@@ -570,26 +570,41 @@ td[rowspan="2"]{
   filter: grayscale(100%);
 }
 
-.bloco-pais {
-    display: inline-block;
-    text-align: center;
-    margin: 0 2px;
-    vertical-align: top;
+.bloco-pais{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    margin:0 2px;
+    vertical-align:top;
 }
 
-.bloco-pais .pais {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+.bloco-pais img{
+    width:21px;
+    height:15px;
+    object-fit:cover;
+    border-radius:2px;
+    box-shadow:0 0 0 1px rgba(255,255,255,.15);
 }
 
-.bloco-pais .trigrama {
-    display: block;
-    margin-top: 2px;
-    font-size: 7px;
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: .2px;
-    color: #94a3b8;
+.trigrama{
+    margin-top:2px;
+    font-size:8px;
+    font-weight:600;
+    line-height:1;
+    color:#94a3b8;
+    letter-spacing:.3px;
+}
+
+@media (min-width:769px){
+
+    .bloco-pais img{
+        width:28px;
+        height:21px;
+    }
+
+    .trigrama{
+        font-size:10px;
+    }
+
 }
