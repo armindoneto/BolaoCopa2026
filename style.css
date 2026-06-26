@@ -554,19 +554,81 @@ td[rowspan="2"]{
     font-size: 19px;
   }
 
-  /* bandeiras */
-  .celula-bandeiras .pais img {
-    width: 28px;
-    height: 21px;
-  }
-
   /* pontuação de cada nível */
   .celula-ponto-nivel {
     font-size: 14px;
   }
-
-  /* Bandeiras de seleções eliminadas - apenas tela Tabela */
-.eliminado img {
-  filter: grayscale(100%);
 }
+
+/* Bandeiras + trigramas na tela TABELA */
+.celula-bandeiras {
+  text-align: center !important;
+  vertical-align: bottom;
+}
+
+.celula-bandeiras .bloco-pais {
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 24px !important;
+  min-width: 24px !important;
+  max-width: 24px !important;
+  margin: 0 2px !important;
+  vertical-align: top !important;
+}
+
+.celula-bandeiras .bloco-pais img.bandeira-tabela {
+  display: block !important;
+  width: 21px !important;
+  min-width: 21px !important;
+  max-width: 21px !important;
+  height: 15px !important;
+  min-height: 15px !important;
+  max-height: 15px !important;
+  object-fit: cover !important;
+  border-radius: 2px !important;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.15) !important;
+}
+
+.celula-bandeiras .bloco-pais .trigrama {
+  display: block !important;
+  width: 24px !important;
+  max-width: 24px !important;
+  margin-top: 2px !important;
+  font-size: 6px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.2px !important;
+  text-align: center !important;
+  color: #94a3b8 !important;
+}
+
+/* Seleções eliminadas */
+img.eliminado {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+@media (min-width: 769px) {
+  .celula-bandeiras .bloco-pais {
+    width: 34px !important;
+    min-width: 34px !important;
+    max-width: 34px !important;
+  }
+
+  .celula-bandeiras .bloco-pais img.bandeira-tabela {
+    width: 28px !important;
+    min-width: 28px !important;
+    max-width: 28px !important;
+    height: 21px !important;
+    min-height: 21px !important;
+    max-height: 21px !important;
+  }
+
+  .celula-bandeiras .bloco-pais .trigrama {
+    width: 34px !important;
+    max-width: 34px !important;
+    font-size: 8px !important;
+  }
 }

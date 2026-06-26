@@ -53,6 +53,58 @@ const bandeiras = {
   "Nova Zelândia": "nz"
 };
 
+const trigramas = {
+  "França": "FRA",
+  "Espanha": "ESP",
+  "Argentina": "ARG",
+  "Inglaterra": "ING",
+  "Portugal": "POR",
+  "Brasil": "BRA",
+  "Holanda": "HOL",
+  "Marrocos": "MAR",
+  "Bélgica": "BEL",
+  "Alemanha": "ALE",
+  "Croácia": "CRO",
+  "Colômbia": "COL",
+  "Senegal": "SEN",
+  "México": "MEX",
+  "EUA": "EUA",
+  "Estados Unidos": "EUA",
+  "Uruguai": "URU",
+  "Japão": "JAP",
+  "Suíça": "SUI",
+  "Irã": "IRA",
+  "Turquia": "TUR",
+  "Equador": "EQU",
+  "Áustria": "AUS",
+  "Coreia do Sul": "COR",
+  "Austrália": "AUS",
+  "Argélia": "ARG",
+  "Egito": "EGI",
+  "Canadá": "CAN",
+  "Noruega": "NOR",
+  "Panamá": "PAN",
+  "Costa do Marfim": "CMF",
+  "Suécia": "SUE",
+  "Paraguai": "PAR",
+  "Rep. Tcheca": "TCH",
+  "República Tcheca": "TCH",
+  "Escócia": "ESC",
+  "Tunísia": "TUN",
+  "Congo": "CON",
+  "Uzbequistão": "UZB",
+  "Catar": "CAT",
+  "Iraque": "IRQ",
+  "África do Sul": "AFS",
+  "Arábia Saudita": "ARA",
+  "Jordânia": "JOR",
+  "Bósnia": "BOS",
+  "Cabo Verde": "CBV",
+  "Gana": "GAN",
+  "Curaçao": "CUR",
+  "Haiti": "HAI",
+  "Nova Zelândia": "NZL"
+};
 const eliminados = [
   "Catar",
   "Haiti",
@@ -91,25 +143,31 @@ function criarPais(nome) {
   const pais = normalizar(nome);
   const codigo = bandeiras[pais];
 
-  if (!codigo) return document.createTextNode(pais);
+  const container = document.createElement("div");
+  container.className = "bloco-pais";
 
-  const span = document.createElement("span");
-  span.className = "pais";
+  if (!codigo) {
+    container.textContent = pais;
+    return container;
+  }
 
-  const img = document.createElement("img");
-  img.src = `https://flagcdn.com/w40/${codigo}.png`;
-  img.alt = pais;
-
-  const texto = document.createElement("span");
-  texto.textContent = pais;
-
-  span.appendChild(img);
+const img = document.createElement("img");
+img.src = `https://flagcdn.com/w40/${codigo}.png`;
+img.alt = pais;
+img.className = "bandeira-tabela";
 
   if (eliminados.includes(pais)) {
-  span.classList.add("eliminado");
-}
-  
-  return span;
+    img.classList.add("eliminado");
+  }
+
+  const tri = document.createElement("div");
+  tri.className = "trigrama";
+  tri.textContent = trigramas[pais] || pais.substring(0,3).toUpperCase();
+
+  container.appendChild(img);
+  container.appendChild(tri);
+
+  return container;
 }
 
 function preencherCelula(td, valor) {
@@ -169,8 +227,8 @@ function desenharTabela(linhas) {
   thead.appendChild(trHead);
 
   linhas.forEach((linha, indiceLinha) => {
-    const trBandeiras = document.createElement("tr");
-    const trPontos = document.createElement("tr");
+const trBandeiras = document.createElement("tr");
+const trPontos = document.createElement("tr");
 
     const posicaoOriginal = dados.indexOf(linha);
 
@@ -178,28 +236,28 @@ function desenharTabela(linhas) {
 trPontos.dataset.indice = posicaoOriginal;
 
     if (posicaoOriginal === 0) {
-      trBandeiras.classList.add("top1");
-      trPontos.classList.add("top1");
+ trBandeiras.classList.add("top1");
+trPontos.classList.add("top1");
     }
 
     if (posicaoOriginal === 1) {
-      trBandeiras.classList.add("top2");
-      trPontos.classList.add("top2");
+trBandeiras.classList.add("top2");
+trPontos.classList.add("top2");
     }
 
     if (posicaoOriginal === 2) {
-      trBandeiras.classList.add("top3");
-      trPontos.classList.add("top3");
+trBandeiras.classList.add("top3");
+trPontos.classList.add("top3");
     }
 
     if (posicaoOriginal === 3) {
-      trBandeiras.classList.add("top4");
-      trPontos.classList.add("top4");
+trBandeiras.classList.add("top4");
+trPontos.classList.add("top4");
     }
 
     if (posicaoOriginal === dados.length - 1) {
-      trBandeiras.classList.add("ultimo");
-      trPontos.classList.add("ultimo");
+trBandeiras.classList.add("ultimo");
+trPontos.classList.add("ultimo");
     }
 
     // Colunas fixas: C, PARTICIPANTE, P
@@ -227,28 +285,28 @@ if (coluna === colunasFixas[1]) td.classList.add("fixa-participante");
     });
 
     // N1 a N11
-    colunasPontos.forEach((colunaPonto, indiceNivel) => {
-      const tdBandeiras = document.createElement("td");
-      tdBandeiras.classList.add("celula-bandeiras");
+colunasPontos.forEach((colunaPonto, indiceNivel) => {
+  const tdBandeiras = document.createElement("td");
+  tdBandeiras.classList.add("celula-bandeiras");
 
-      const tdPonto = document.createElement("td");
-      tdPonto.classList.add("celula-ponto-nivel");
+  const tdPonto = document.createElement("td");
+  tdPonto.classList.add("celula-ponto-nivel");
 
-      const bandeirasDoNivel = obterBandeirasDoNivel(linha, colunasBandeiras, indiceNivel);
+  const bandeirasDoNivel = obterBandeirasDoNivel(linha, colunasBandeiras, indiceNivel);
 
-      bandeirasDoNivel.forEach(nomePais => {
-        tdBandeiras.appendChild(criarPais(nomePais));
+bandeirasDoNivel.forEach(nomePais => {
+    tdBandeiras.appendChild(criarPais(nomePais));
+});
+
+  tdPonto.textContent = linha[colunaPonto];
+
+  trBandeiras.appendChild(tdBandeiras);
+  trPontos.appendChild(tdPonto);
+});
+
+tbody.appendChild(trBandeiras);
+tbody.appendChild(trPontos);
       });
-
-      tdPonto.textContent = linha[colunaPonto];
-
-      trBandeiras.appendChild(tdBandeiras);
-      trPontos.appendChild(tdPonto);
-    });
-
-    tbody.appendChild(trBandeiras);
-    tbody.appendChild(trPontos);
-  });
 }
 
 function obterBandeirasDoNivel(linha, colunasBandeiras, indiceNivel) {
