@@ -286,39 +286,40 @@ if (coluna === colunasFixas[1]) td.classList.add("fixa-participante");
     });
 
     // N1 a N11
-    colunasPontos.forEach((colunaPonto, indiceNivel) => {
-const tdBandeiras = document.createElement("td");
-tdBandeiras.classList.add("celula-bandeiras");
+colunasPontos.forEach((colunaPonto, indiceNivel) => {
+  const tdBandeiras = document.createElement("td");
+  tdBandeiras.classList.add("celula-bandeiras");
 
-const tdTrigramas = document.createElement("td");
-tdTrigramas.classList.add("celula-trigramas");
+  const tdTrigramas = document.createElement("td");
+  tdTrigramas.classList.add("celula-trigramas");
 
-const tdPonto = document.createElement("td");
-tdPonto.classList.add("celula-ponto-nivel");
+  const tdPonto = document.createElement("td");
+  tdPonto.classList.add("celula-ponto-nivel");
 
-const bandeirasDoNivel = obterBandeirasDoNivel(linha, colunasBandeiras, indiceNivel);
+  const bandeirasDoNivel = obterBandeirasDoNivel(linha, colunasBandeiras, indiceNivel);
 
-bandeirasDoNivel.forEach(nomePais => {
-  tdBandeiras.appendChild(criarPais(nomePais));
+  bandeirasDoNivel.forEach(nomePais => {
+    tdBandeiras.appendChild(criarPais(nomePais));
 
-  const spanTri = document.createElement("span");
-  spanTri.className = "trigrama";
-  spanTri.textContent = trigramas[nomePais] || nomePais.slice(0, 3).toUpperCase();
+    const spanTri = document.createElement("span");
+    spanTri.className = "trigrama";
+    spanTri.textContent = trigramas[nomePais] || nomePais.slice(0, 3).toUpperCase();
 
-  tdTrigramas.appendChild(spanTri);
+    tdTrigramas.appendChild(spanTri);
+  });
+
+  tdPonto.textContent = linha[colunaPonto];
+
+  trBandeiras.appendChild(tdBandeiras);
+  trTrigramas.appendChild(tdTrigramas);
+  trPontos.appendChild(tdPonto);
 });
-
-tdPonto.textContent = linha[colunaPonto];
-
-trBandeiras.appendChild(tdBandeiras);
-trTrigramas.appendChild(tdTrigramas);
-trPontos.appendChild(tdPonto);
 
 tbody.appendChild(trBandeiras);
 tbody.appendChild(trTrigramas);
 tbody.appendChild(trPontos);
-  });
-})
+      });
+}
 
 function obterBandeirasDoNivel(linha, colunasBandeiras, indiceNivel) {
   // N1 a N6 têm 1 seleção
