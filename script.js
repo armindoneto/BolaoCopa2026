@@ -54,8 +54,12 @@ const bandeiras = {
 };
 
 const eliminados = [
-  "Uruguai",
-  "Alemanha"
+  "Catar",
+  "Haiti",
+  "República Tcheca",
+  "Curaçao",
+  "Tunísia",
+  "Turquia"
 ];
 
 let dados = [];
