@@ -151,9 +151,10 @@ function criarPais(nome) {
     return container;
   }
 
-  const img = document.createElement("img");
-  img.src = `https://flagcdn.com/w40/${codigo}.png`;
-  img.alt = pais;
+const img = document.createElement("img");
+img.src = `https://flagcdn.com/w40/${codigo}.png`;
+img.alt = pais;
+img.className = "bandeira-tabela";
 
   if (eliminados.includes(pais)) {
     img.classList.add("eliminado");
