@@ -222,42 +222,35 @@ function desenharTabela(linhas) {
 
   linhas.forEach((linha, indiceLinha) => {
 const trBandeiras = document.createElement("tr");
-const trTrigramas = document.createElement("tr");
 const trPontos = document.createElement("tr");
 
     const posicaoOriginal = dados.indexOf(linha);
 
     trBandeiras.dataset.indice = posicaoOriginal;
 trPontos.dataset.indice = posicaoOriginal;
-    trTrigramas.dataset.indice = posicaoOriginal;
 
     if (posicaoOriginal === 0) {
  trBandeiras.classList.add("top1");
-trTrigramas.classList.add("top1");
 trPontos.classList.add("top1");
     }
 
     if (posicaoOriginal === 1) {
 trBandeiras.classList.add("top2");
-trTrigramas.classList.add("top2");
 trPontos.classList.add("top2");
     }
 
     if (posicaoOriginal === 2) {
 trBandeiras.classList.add("top3");
-trTrigramas.classList.add("top3");
 trPontos.classList.add("top3");
     }
 
     if (posicaoOriginal === 3) {
 trBandeiras.classList.add("top4");
-trTrigramas.classList.add("top4");
 trPontos.classList.add("top4");
     }
 
     if (posicaoOriginal === dados.length - 1) {
 trBandeiras.classList.add("ultimo");
-trTrigramas.classList.add("ultimo");
 trPontos.classList.add("ultimo");
     }
 
@@ -268,7 +261,7 @@ trPontos.classList.add("ultimo");
       if (coluna === colunasFixas[0]) td.classList.add("fixa-c");
 if (coluna === colunasFixas[1]) td.classList.add("fixa-participante");
       
-      td.rowSpan = 3;
+      td.rowSpan = 2;
 
       preencherCelula(td, linha[coluna]);
 
@@ -290,33 +283,33 @@ colunasPontos.forEach((colunaPonto, indiceNivel) => {
   const tdBandeiras = document.createElement("td");
   tdBandeiras.classList.add("celula-bandeiras");
 
-  const tdTrigramas = document.createElement("td");
-  tdTrigramas.classList.add("celula-trigramas");
-
   const tdPonto = document.createElement("td");
   tdPonto.classList.add("celula-ponto-nivel");
 
   const bandeirasDoNivel = obterBandeirasDoNivel(linha, colunasBandeiras, indiceNivel);
 
   bandeirasDoNivel.forEach(nomePais => {
-    tdBandeiras.appendChild(criarPais(nomePais));
+    const blocoPais = document.createElement("div");
+    blocoPais.className = "bloco-pais";
+
+    blocoPais.appendChild(criarPais(nomePais));
 
     const spanTri = document.createElement("span");
     spanTri.className = "trigrama";
     spanTri.textContent = trigramas[nomePais] || nomePais.slice(0, 3).toUpperCase();
 
-    tdTrigramas.appendChild(spanTri);
+    blocoPais.appendChild(spanTri);
+
+    tdBandeiras.appendChild(blocoPais);
   });
 
   tdPonto.textContent = linha[colunaPonto];
 
   trBandeiras.appendChild(tdBandeiras);
-  trTrigramas.appendChild(tdTrigramas);
   trPontos.appendChild(tdPonto);
 });
 
 tbody.appendChild(trBandeiras);
-tbody.appendChild(trTrigramas);
 tbody.appendChild(trPontos);
       });
 }
