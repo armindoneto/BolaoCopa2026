@@ -609,50 +609,44 @@ td[rowspan="2"]{
 
 }
 
-  /* Correção final das bandeiras com trigrama */
+/* Correção definitiva das bandeiras da TABELA */
+.bandeira-tabela {
+  display: block !important;
+  width: 21px !important;
+  height: 15px !important;
+  object-fit: cover !important;
+  border-radius: 2px !important;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.15) !important;
+}
+
 .bloco-pais {
   display: inline-flex !important;
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 24px;
-  min-width: 24px;
-  margin: 0 2px;
-  vertical-align: top;
+  width: 24px !important;
+  min-width: 24px !important;
+  margin: 0 2px !important;
 }
 
-.bloco-pais img {
-  display: block !important;
-  width: 21px !important;
-  height: 15px !important;
-  object-fit: cover !important;
-  border-radius: 2px;
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.15);
-}
-
-.bloco-pais .trigrama {
-  display: block !important;
-  margin-top: 2px;
-  font-size: 7px;
-  font-weight: 600;
-  line-height: 1;
-  color: #94a3b8;
-  letter-spacing: .2px;
-  text-align: center;
+.trigrama {
+  font-size: 7px !important;
+  line-height: 1 !important;
+  margin-top: 2px !important;
 }
 
 @media (min-width: 769px) {
-  .bloco-pais {
-    width: 32px;
-    min-width: 32px;
-  }
-
-  .bloco-pais img {
+  .bandeira-tabela {
     width: 28px !important;
     height: 21px !important;
   }
 
-  .bloco-pais .trigrama {
-    font-size: 9px;
+  .bloco-pais {
+    width: 32px !important;
+    min-width: 32px !important;
+  }
+
+  .trigrama {
+    font-size: 9px !important;
   }
 }
