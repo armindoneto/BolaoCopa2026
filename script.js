@@ -58,7 +58,8 @@ const eliminados = [
   "Haiti",
   "República Tcheca",
   "Curaçao",
-  "Tunísia"
+  "Tunísia",
+  "Turquia"
 ];
 
 let dados = [];
