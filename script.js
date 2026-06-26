@@ -143,25 +143,30 @@ function criarPais(nome) {
   const pais = normalizar(nome);
   const codigo = bandeiras[pais];
 
-  if (!codigo) return document.createTextNode(pais);
+  const container = document.createElement("div");
+  container.className = "bloco-pais";
 
-  const span = document.createElement("span");
-  span.className = "pais";
+  if (!codigo) {
+    container.textContent = pais;
+    return container;
+  }
 
   const img = document.createElement("img");
   img.src = `https://flagcdn.com/w40/${codigo}.png`;
   img.alt = pais;
 
-  const texto = document.createElement("span");
-  texto.textContent = pais;
-
-  span.appendChild(img);
-
   if (eliminados.includes(pais)) {
-  span.classList.add("eliminado");
-}
-  
-  return span;
+    img.classList.add("eliminado");
+  }
+
+  const tri = document.createElement("div");
+  tri.className = "trigrama";
+  tri.textContent = trigramas[pais] || pais.substring(0,3).toUpperCase();
+
+  container.appendChild(img);
+  container.appendChild(tri);
+
+  return container;
 }
 
 function preencherCelula(td, valor) {
@@ -288,20 +293,9 @@ colunasPontos.forEach((colunaPonto, indiceNivel) => {
 
   const bandeirasDoNivel = obterBandeirasDoNivel(linha, colunasBandeiras, indiceNivel);
 
-  bandeirasDoNivel.forEach(nomePais => {
-    const blocoPais = document.createElement("div");
-    blocoPais.className = "bloco-pais";
-
-    blocoPais.appendChild(criarPais(nomePais));
-
-    const spanTri = document.createElement("span");
-    spanTri.className = "trigrama";
-    spanTri.textContent = trigramas[nomePais] || nomePais.slice(0, 3).toUpperCase();
-
-    blocoPais.appendChild(spanTri);
-
-    tdBandeiras.appendChild(blocoPais);
-  });
+bandeirasDoNivel.forEach(nomePais => {
+    tdBandeiras.appendChild(criarPais(nomePais));
+});
 
   tdPonto.textContent = linha[colunaPonto];
 
