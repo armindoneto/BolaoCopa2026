@@ -115,7 +115,8 @@ const eliminados = [
   "Iraque",
   "Escócia",
   "Arábia Saudita",
-  "Uruguai"
+  "Uruguai",
+  "Nova Zelândia"
 ];
 
 let dados = [];
