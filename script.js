@@ -120,7 +120,7 @@ const eliminados = [
   "Panamá",
   "Jordânia",
   "Uzbequistão",
-  "Coréia do Sul",
+  "Coreia do Sul",
   "Irã"
 ];
 
