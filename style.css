@@ -632,3 +632,17 @@ img.eliminado {
     font-size: 8px !important;
   }
 }
+.card-playoffs {
+  background: #020617;
+  padding: 16px;
+  overflow: auto;
+  max-height: 82vh;
+}
+
+.card-playoffs img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+}
