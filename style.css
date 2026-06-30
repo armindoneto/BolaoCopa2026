@@ -633,16 +633,15 @@ img.eliminado {
   }
 }
 .card-playoffs {
-  background: #020617;
-  padding: 16px;
-  overflow: auto;
-  max-height: 82vh;
+    padding: 20px;
+    background: #020617;
+    text-align: center;
 }
 
 .card-playoffs img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-  border-radius: 12px;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 10px;
 }
