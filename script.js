@@ -111,7 +111,21 @@ const eliminados = [
   "República Tcheca",
   "Curaçao",
   "Tunísia",
-  "Turquia"
+  "Turquia",
+  "Iraque",
+  "Escócia",
+  "Arábia Saudita",
+  "Uruguai",
+  "Nova Zelândia",
+  "Panamá",
+  "Jordânia",
+  "Uzbequistão",
+  "Coreia do Sul",
+  "Irã",
+  "África do Sul",
+  "Japão",
+  "Alemanha",
+  "Holanda"
 ];
 
 let dados = [];
