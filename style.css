@@ -645,3 +645,75 @@ img.eliminado {
     margin: 0 auto;
     border-radius: 10px;
 }
+
+.card-sugestoes{
+
+    padding:30px;
+    max-width:700px;
+    margin:auto;
+
+}
+
+.card-sugestoes label{
+
+    display:block;
+    margin-top:18px;
+    margin-bottom:8px;
+    font-weight:bold;
+
+}
+
+.card-sugestoes input{
+
+    width:100%;
+    max-width:none;
+
+}
+
+.card-sugestoes textarea{
+
+    width:100%;
+    background:#0f172a;
+    color:white;
+    border:1px solid #334155;
+    border-radius:12px;
+    padding:12px;
+    resize:vertical;
+    font-family:inherit;
+    font-size:14px;
+
+}
+
+.botao-enviar{
+
+    margin-top:24px;
+    width:100%;
+    padding:14px;
+
+    background:#2A398D;
+    color:white;
+
+    border:none;
+    border-radius:12px;
+
+    font-size:15px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+.botao-enviar:hover{
+
+    background:#3c4fb5;
+
+}
+
+#mensagem{
+
+    margin-top:20px;
+    text-align:center;
+    font-weight:bold;
+    color:#22c55e;
+
+}
