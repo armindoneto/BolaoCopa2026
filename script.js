@@ -132,7 +132,8 @@ const eliminados = [
   "Congo",
   "Senegal",
   "Bósnia",
-  "Áustria"
+  "Áustria",
+  "Croácia"
 ];
 
 let dados = [];
