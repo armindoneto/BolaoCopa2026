@@ -731,12 +731,19 @@ img.eliminado {
 }
 
 @media (max-width: 768px) {
-  .menu-principal {
-    flex-wrap: wrap;
-    gap: 10px;
+
+  .menu-principal{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    max-width:420px;
+    margin:0 auto 16px;
   }
 
-  .botao-menu {
-    padding: 10px 20px;
+  .botao-menu{
+    width:100%;
+    text-align:center;
+    box-sizing:border-box;
   }
+
 }
