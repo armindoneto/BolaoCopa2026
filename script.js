@@ -126,7 +126,14 @@ const eliminados = [
   "Japão",
   "Alemanha",
   "Holanda",
-  "Costa do Marfim"
+  "Costa do Marfim",
+  "Suécia",
+  "Equador",
+  "Congo",
+  "Senegal",
+  "Bósnia",
+  "Áustria",
+  "Croácia"
 ];
 
 let dados = [];
