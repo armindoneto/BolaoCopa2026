@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sugestões</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="hero">
+    <img src="assets/banner.png" class="banner-titulo">
+</header>
+
+<nav class="menu-principal">
+
+    <a href="index.html" class="botao-menu">Tabela</a>
+    <a href="equipes.html" class="botao-menu">Seleções</a>
+    <a href="copa.html" class="botao-menu">Copa</a>
+    <a href="sugestoes.html" class="botao-menu ativo">Sugestões</a>
+
+</nav>
+
+<div class="container">
+
+<div class="painel-wrapper">
+
+<div class="barra-painel">
+<div class="titulo-barra">💡 Envie sua sugestão</div>
+</div>
+
+<div class="card-sugestoes">
+
+<form id="formSugestao">
+
+<label>Nome</label>
+
+<input
+type="text"
+id="nome"
+maxlength="40"
+required>
+
+<label>Sugestão</label>
+
+<textarea
+id="sugestao"
+rows="8"
+maxlength="1000"
+required></textarea>
+
+<button type="submit" class="botao-enviar">
+Enviar Sugestão
+</button>
+
+</form>
+
+<div id="mensagem"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="sugestoes.js"></script>
+
+</body>
+</html>
