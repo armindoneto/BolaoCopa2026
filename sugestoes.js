@@ -1,5 +1,5 @@
 const FORM_URL =
-"https://docs.google.com/forms/d/e/1FAIpQLSdNNePdn6PZTvzVsxOYT3FiV0BoTV6g0SIIZ_ruYzS-UkseQg/viewform?usp=dialog";
+"https://docs.google.com/forms/d/e/1FAIpQLSdNNePdn6PZTvzVsxOYT3FiV0BoTV6g0SIIZ_ruYzS-UkseQg/formResponse";
 
 const form = document.getElementById("formSugestao");
 
