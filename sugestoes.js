@@ -1,5 +1,5 @@
 const FORM_URL =
-"https://docs.google.com/forms/d/e/SEU_FORM_ID/formResponse";
+"https://docs.google.com/forms/d/e/1FAIpQLSdNNePdn6PZTvzVsxOYT3FiV0BoTV6g0SIIZ_ruYzS-UkseQg/viewform?usp=dialog";
 
 const form = document.getElementById("formSugestao");
 
